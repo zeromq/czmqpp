@@ -1,6 +1,5 @@
-#include <czmq++/czmq.hpp>
-
 #include <thread>
+#include <czmq++/czmq.hpp>
 
 void client_task(const std::string& server_public_text)
 {
