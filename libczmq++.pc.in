@@ -1,0 +1,12 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: libczmq++
+Description:  Rewrite bitcoin, make it super-pluggable, very easy to do and hack everything at every level, and very configurable.
+URL: http://github.com/darkwallet/czmqpp
+Version: @PACKAGE_VERSION@
+Requires: libczmq
+Cflags: -I${includedir} -std=c++11
+
