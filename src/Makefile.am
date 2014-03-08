@@ -1,7 +1,11 @@
 AUTOMAKE_OPTIONS = subdir-objects
 
+AM_CPPFLAGS = -I$(srcdir)/../include ${libczmq_CFLAGS}
+
 lib_LTLIBRARIES = libczmq++.la
-AM_CPPFLAGS = -I$(srcdir)/../include
 libczmq___la_SOURCES = \
-    czmq.cpp
+    authenticator.cpp \
+    certificate.cpp \
+    context.cpp \
+    socket.cpp
 

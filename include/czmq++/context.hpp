@@ -17,12 +17,26 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef LIBCZMQPP_CZMQ_HPP
-#define LIBCZMQPP_CZMQ_HPP
+#ifndef LIBCZMQPP_CONTEXT_HPP
+#define LIBCZMQPP_CONTEXT_HPP
 
-#include <czmq++/authenticator.hpp>
-#include <czmq++/certificate.hpp>
-#include <czmq++/context.hpp>
+#include <czmq.h>
+
+namespace czmqpp {
+
+class context
+{
+public:
+    context();
+    ~context();
+
+    zctx_t* self();
+
+private:
+    zctx_t* self_ = nullptr;
+};
+
+} // namespace czmqpp
 
 #endif
 

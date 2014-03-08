@@ -17,12 +17,27 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef LIBCZMQPP_CZMQ_HPP
-#define LIBCZMQPP_CZMQ_HPP
-
-#include <czmq++/authenticator.hpp>
-#include <czmq++/certificate.hpp>
 #include <czmq++/context.hpp>
 
-#endif
+#include <czmq++/assert.hpp>
+
+namespace czmqpp {
+
+context::context()
+{
+    self_ = zctx_new();
+}
+context::~context()
+{
+    CZMQPP_ASSERT(self_);
+    zctx_destroy(&self_);
+}
+
+zctx_t* context::self()
+{
+    return self_;
+}
+
+} // namespace czmqpp
+
 

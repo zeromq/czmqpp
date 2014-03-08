@@ -17,12 +17,36 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef LIBCZMQPP_CZMQ_HPP
-#define LIBCZMQPP_CZMQ_HPP
+#include <czmq++/socket.hpp>
 
-#include <czmq++/authenticator.hpp>
-#include <czmq++/certificate.hpp>
-#include <czmq++/context.hpp>
+#include <czmq++/assert.hpp>
 
-#endif
+namespace czmqpp {
+
+socket::socket(context& ctx, int type)
+{
+    self_ = zsocket_new(ctx.self(), type);
+}
+socket::~socket()
+{
+    CZMQPP_ASSERT(self_);
+    // context.self will delete the self_ for us.
+}
+
+void* socket::self()
+{
+    return self_;
+}
+
+int socket::bind(const std::string& address)
+{
+    return zsocket_bind(self_, address.c_str());
+}
+int socket::connect(const std::string& address)
+{
+    return zsocket_connect(self_, address.c_str());
+}
+
+} // namespace czmqpp
+
 

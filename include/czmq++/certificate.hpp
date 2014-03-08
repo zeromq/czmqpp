@@ -17,12 +17,40 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef LIBCZMQPP_CZMQ_HPP
-#define LIBCZMQPP_CZMQ_HPP
+#ifndef LIBCZMQPP_CERTIFICATE_HPP
+#define LIBCZMQPP_CERTIFICATE_HPP
 
-#include <czmq++/authenticator.hpp>
-#include <czmq++/certificate.hpp>
-#include <czmq++/context.hpp>
+#include <string>
+#include <czmq.h>
+#include <czmq++/socket.hpp>
+
+namespace czmqpp {
+
+zcert_t* new_cert();
+zcert_t* load_cert(const std::string& filename);
+
+class certificate
+{
+public:
+    certificate() = delete;
+    certificate(zcert_t* self);
+    certificate(certificate&& other);
+    certificate(const certificate&) = delete;
+    ~certificate();
+
+    zcert_t* self();
+
+    void set_meta(const std::string& name, const std::string& value);
+    int save_public(const std::string& filename);
+    int save(const std::string& filename);
+    std::string public_text() const;
+    void apply(socket& sock);
+
+private:
+    zcert_t* self_ = nullptr;
+};
+
+} // namespace czmqpp
 
 #endif
 

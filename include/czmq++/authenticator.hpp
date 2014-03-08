@@ -17,12 +17,34 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef LIBCZMQPP_CZMQ_HPP
-#define LIBCZMQPP_CZMQ_HPP
+#ifndef LIBCZMQPP_AUTHENTICATOR_HPP
+#define LIBCZMQPP_AUTHENTICATOR_HPP
 
-#include <czmq++/authenticator.hpp>
-#include <czmq++/certificate.hpp>
+#include <string>
 #include <czmq++/context.hpp>
+
+namespace czmqpp {
+
+class authenticator
+{
+public:
+    authenticator(context& ctx);
+    ~authenticator();
+
+    zauth_t* self();
+
+    void allow(const std::string& address);
+    void deny(const std::string& address);
+    void configure_plain(
+        const std::string& domain, const std::string& filename);
+    void configure_curve(
+        const std::string& domain, const std::string& location);
+    void set_verbose(bool verbose);
+private:
+    zauth_t* self_ = nullptr;
+};
+
+} // namespace czmqpp
 
 #endif
 

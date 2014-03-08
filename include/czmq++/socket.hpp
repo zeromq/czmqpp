@@ -17,12 +17,32 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef LIBCZMQPP_CZMQ_HPP
-#define LIBCZMQPP_CZMQ_HPP
+#ifndef LIBCZMQPP_SOCKET_HPP
+#define LIBCZMQPP_SOCKET_HPP
 
-#include <czmq++/authenticator.hpp>
-#include <czmq++/certificate.hpp>
+#include <string>
 #include <czmq++/context.hpp>
+
+namespace czmqpp {
+
+class socket
+{
+public:
+    socket(context& ctx, int type);
+    ~socket();
+
+    void* self();
+
+#include "socket_opt.hpp"
+
+    int bind(const std::string& address);
+    int connect(const std::string& address);
+
+private:
+    void* self_ = nullptr;
+};
+
+} // namespace czmqpp
 
 #endif
 

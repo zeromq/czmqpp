@@ -17,9 +17,13 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#include <czmq++/czmq.hpp>
+#ifndef LIBCZMQPP_ASSERT_HPP
+#define LIBCZMQPP_ASSERT_HPP
 
-namespace czmqpp {
+#include <cassert>
 
-} // namespace czmqpp
+#define CZMQPP_ASSERT assert
+
+#endif
+
 
