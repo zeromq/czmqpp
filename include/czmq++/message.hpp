@@ -17,14 +17,33 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef LIBCZMQPP_CZMQ_HPP
-#define LIBCZMQPP_CZMQ_HPP
+#ifndef LIBCZMQPP_MESSAGE_HPP
+#define LIBCZMQPP_MESSAGE_HPP
 
-#include <czmq++/authenticator.hpp>
-#include <czmq++/certificate.hpp>
-#include <czmq++/context.hpp>
+#include <vector>
+#include <stdint.h>
+#include <czmq.h>
 #include <czmq++/socket.hpp>
-#include <czmq++/message.hpp>
+
+namespace czmqpp {
+
+typedef std::vector<uint8_t> data_chunk;
+typedef std::vector<data_chunk> data_stack;
+
+class message
+{
+public:
+    void append(const data_chunk& part);
+    void append(data_chunk&& part);
+    const data_stack& parts() const;
+    bool send(socket& sock);
+    bool receive(socket& sock);
+
+private:
+    data_stack parts_;
+};
+
+} // namespace czmqpp
 
 #endif
 

@@ -7,5 +7,6 @@ libczmq___la_SOURCES = \
     authenticator.cpp \
     certificate.cpp \
     context.cpp \
-    socket.cpp
+    socket.cpp \
+    message.cpp
 

@@ -20,9 +20,10 @@ void client_task(const std::string& server_public_text)
     assert(rc == 0);
 
     //  Wait for our message, that signals the test was successful
-    char *message = zstr_recv (client.self());
-    assert(streq(message, "Hello"));
-    free(message);
+    czmqpp::message msg;
+    msg.receive(client);
+    assert(msg.parts().size() == 1);
+    assert((msg.parts()[0] == czmqpp::data_chunk{{0xde, 0xad, 0xbe, 0xef}}));
     puts("Ironhouse test OK");
 }
 
@@ -46,7 +47,10 @@ void server_task(czmqpp::certificate server_cert)
     assert(rc != -1);
 
     //  Send our test message, just once
-    zstr_send(server.self(), "Hello");
+    czmqpp::message msg;
+    msg.append(czmqpp::data_chunk{{0xde, 0xad, 0xbe, 0xef}});
+    msg.send(server);
+
     zclock_sleep(200);
 }
 
