@@ -32,6 +32,9 @@ zcert_t* load_cert(const std::string& filename)
     return zcert_load(filename.c_str());
 }
 
+certificate::certificate()
+{
+}
 certificate::certificate(zcert_t* self)
 {
     self_ = self;

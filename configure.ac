@@ -24,6 +24,6 @@ AC_ARG_WITH([pkgconfigdir], AS_HELP_STRING([--with-pkgconfigdir=PATH],
     [pkgconfigdir="$withval"], [pkgconfigdir='${libdir}/pkgconfig'])
 AC_SUBST([pkgconfigdir])
 
-AC_CONFIG_FILES([Makefile include/czmq++/Makefile src/Makefile libczmq++.pc])
+AC_CONFIG_FILES([Makefile include/czmq++/Makefile src/Makefile libczmqpp.pc])
 AC_OUTPUT
 
