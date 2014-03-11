@@ -23,6 +23,9 @@
 
 namespace czmqpp {
 
+socket::socket()
+{
+}
 socket::socket(void* self)
 {
     self_ = self;
@@ -30,11 +33,6 @@ socket::socket(void* self)
 socket::socket(context& ctx, int type)
 {
     self_ = zsocket_new(ctx.self(), type);
-}
-socket::~socket()
-{
-    CZMQPP_ASSERT(self_);
-    // context.self will delete the self_ for us.
 }
 
 void* socket::self()
