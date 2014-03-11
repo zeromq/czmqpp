@@ -28,7 +28,7 @@ poller::poller(SocketArgs&&... sockets)
     {
         return s.self();
     };
-    self_ = zpoller_new(unmask(sockets)...);
+    self_ = zpoller_new(unmask(sockets)..., NULL);
     CZMQPP_ASSERT(self_);
 }
 

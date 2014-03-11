@@ -9,9 +9,15 @@ ironhouse2.o: ironhouse2.cpp
 ironhouse2: ironhouse2.o
 	$(CXX) -o $@ $< $(LIBS)
 
-all: ironhouse2
+poller_test.o: poller_test.cpp
+	$(CXX) -o $@ -c $< $(CXXFLAGS)
+
+poller_test: poller_test.o
+	$(CXX) -o $@ $< $(LIBS)
+
+all: ironhouse2 poller_test
 
 clean:
-	rm -f ironhouse2
+	rm -f ironhouse2 poller_test
 	rm -f *.o
 
