@@ -32,12 +32,13 @@ zcert_t* load_cert(const std::string& filename);
 class certificate
 {
 public:
-    certificate() = delete;
+    certificate();
     certificate(zcert_t* self);
     certificate(certificate&& other);
     certificate(const certificate&) = delete;
     ~certificate();
 
+    void reset(zcert_t* self);
     zcert_t* self();
 
     void set_meta(const std::string& name, const std::string& value);

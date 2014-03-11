@@ -44,12 +44,15 @@ certificate::certificate(certificate&& other)
 }
 certificate::~certificate()
 {
-    if (!self_)
-        return;
-    zcert_destroy(&self_);
-    self_ = nullptr;
+    reset(nullptr);
 }
 
+void certificate::reset(zcert_t* self)
+{
+    if (self_)
+        zcert_destroy(&self_);
+    self_ = self;
+}
 zcert_t* certificate::self()
 {
     return self_;
