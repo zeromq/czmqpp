@@ -40,27 +40,21 @@ zauth_t* authenticator::self()
 
 void authenticator::allow(const std::string& address)
 {
-    zauth_allow(self_,
-        const_cast<char*>(address.c_str()));
+    zauth_allow(self_, address.c_str());
 }
 void authenticator::deny(const std::string& address)
 {
-    zauth_deny(self_,
-        const_cast<char*>(address.c_str()));
+    zauth_deny(self_, address.c_str());
 }
 void authenticator::configure_plain(
     const std::string& domain, const std::string& filename)
 {
-    zauth_configure_plain(self_,
-        const_cast<char*>(domain.c_str()),
-        const_cast<char*>(filename.c_str()));
+    zauth_configure_plain(self_, domain.c_str(), filename.c_str());
 }
 void authenticator::configure_curve(
     const std::string& domain, const std::string& location)
 {
-    zauth_configure_curve(self_,
-        const_cast<char*>(domain.c_str()),
-        const_cast<char*>(location.c_str()));
+    zauth_configure_curve(self_, domain.c_str(), location.c_str());
 }
 void authenticator::set_verbose(bool verbose)
 {

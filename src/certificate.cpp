@@ -29,8 +29,7 @@ zcert_t* new_cert()
 }
 zcert_t* load_cert(const std::string& filename)
 {
-    return zcert_load(
-        const_cast<char*>(filename.c_str()));
+    return zcert_load(filename.c_str());
 }
 
 certificate::certificate(zcert_t* self)
@@ -58,19 +57,15 @@ zcert_t* certificate::self()
 
 void certificate::set_meta(const std::string& name, const std::string& value)
 {
-    zcert_set_meta(self_,
-        const_cast<char*>(name.c_str()),
-        const_cast<char*>(value.c_str()));
+    zcert_set_meta(self_, name.c_str(), value.c_str());
 }
 int certificate::save_public(const std::string& filename)
 {
-    return zcert_save_public(self_,
-        const_cast<char*>(filename.c_str()));
+    return zcert_save_public(self_, filename.c_str());
 }
 int certificate::save(const std::string& filename)
 {
-    return zcert_save(self_,
-        const_cast<char*>(filename.c_str()));
+    return zcert_save(self_, filename.c_str());
 }
 std::string certificate::public_text() const
 {
