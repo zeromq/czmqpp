@@ -39,6 +39,10 @@ void* socket::self()
 {
     return self_;
 }
+void* socket::self() const
+{
+    return self_;
+}
 
 int socket::bind(const std::string& address)
 {
@@ -47,6 +51,11 @@ int socket::bind(const std::string& address)
 int socket::connect(const std::string& address)
 {
     return zsocket_connect(self_, address.c_str());
+}
+
+bool operator==(const socket& sock_a, const socket& sock_b)
+{
+    return sock_a.self() == sock_b.self();
 }
 
 } // namespace czmqpp

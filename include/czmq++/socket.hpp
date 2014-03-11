@@ -34,6 +34,7 @@ public:
     socket(context& ctx, int type);
 
     void* self();
+    void* self() const;
 
 #include "socket_opt.hpp"
 
@@ -43,6 +44,8 @@ public:
 private:
     void* self_ = nullptr;
 };
+
+bool operator==(const socket& sock_a, const socket& sock_b);
 
 } // namespace czmqpp
 

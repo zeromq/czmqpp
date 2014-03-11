@@ -24,7 +24,7 @@ int main()
 
     //  We expect a message only on the sink
     czmqpp::socket which = poller.wait(-1);
-    assert(which.self() == sink.self());
+    assert(which == sink);
     assert(poller.expired() == false);
     assert(poller.terminated() == false);
     char *message = zstr_recv(which.self());
