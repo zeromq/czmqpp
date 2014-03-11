@@ -28,6 +28,7 @@ namespace czmqpp {
 class socket
 {
 public:
+    socket(void* self);
     socket(context& ctx, int type);
     ~socket();
 

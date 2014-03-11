@@ -17,12 +17,19 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
+#include <czmq++/assert.hpp>
+
 namespace czmqpp {
 
 template <typename... SocketArgs>
 poller::poller(SocketArgs&&... sockets)
 {
+    auto unmask = [](socket& s)
+    {
+        return s.self();
+    };
     self_ = zpoller_new(unmask(sockets)...);
+    CZMQPP_ASSERT(self_);
 }
 
 } // namespace czmqpp

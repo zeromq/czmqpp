@@ -34,6 +34,11 @@ zpoller_t* poller::self()
     return self_;
 }
 
+socket poller::wait(int timeout)
+{
+    void* sock_ptr = zpoller_wait(self_, timeout);
+    return socket(sock_ptr);
+}
 bool poller::expired()
 {
     return zpoller_expired(self_);

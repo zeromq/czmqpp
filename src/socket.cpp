@@ -23,6 +23,10 @@
 
 namespace czmqpp {
 
+socket::socket(void* self)
+{
+    self_ = self;
+}
 socket::socket(context& ctx, int type)
 {
     self_ = zsocket_new(ctx.self(), type);

@@ -10,7 +10,7 @@ czmq___include_HEADERS = \
     socket.hpp \
     socket_opt.hpp
 
-czmq___impl_includedir = $(includedir)/czmq++
+czmq___impl_includedir = $(includedir)/czmq++/impl
 czmq___impl_include_HEADERS = \
     impl/poller.ipp
 

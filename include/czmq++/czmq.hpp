@@ -25,6 +25,7 @@
 #include <czmq++/context.hpp>
 #include <czmq++/socket.hpp>
 #include <czmq++/message.hpp>
+#include <czmq++/poller.hpp>
 
 #endif
 

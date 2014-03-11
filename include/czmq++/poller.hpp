@@ -20,7 +20,6 @@
 #ifndef LIBCZMQPP_POLLER_HPP
 #define LIBCZMQPP_POLLER_HPP
 
-#include <utility>
 #include <czmq++/socket.hpp>
 
 namespace czmqpp {
@@ -34,6 +33,7 @@ public:
 
     zpoller_t* self();
 
+    socket wait(int timeout);
     bool expired();
     bool terminated();
 private:
