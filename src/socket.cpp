@@ -23,9 +23,6 @@
 
 namespace czmqpp {
 
-socket::socket()
-{
-}
 socket::socket(void* self)
 {
     self_ = self;

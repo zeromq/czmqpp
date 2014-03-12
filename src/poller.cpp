@@ -34,6 +34,10 @@ zpoller_t* poller::self()
     return self_;
 }
 
+void poller::add(socket& sock)
+{
+    zpoller_add(self_, sock.self());
+}
 socket poller::wait(int timeout)
 {
     void* sock_ptr = zpoller_wait(self_, timeout);

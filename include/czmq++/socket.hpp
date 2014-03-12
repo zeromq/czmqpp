@@ -28,10 +28,10 @@ namespace czmqpp {
 class socket
 {
 public:
-    // context will delete the self_ for us.
-    socket();
+    // used by poller to return socket.
     socket(void* self);
     socket(context& ctx, int type);
+    // context will delete the self_ for us.
 
     void* self();
     void* self() const;

@@ -33,6 +33,7 @@ public:
 
     zpoller_t* self();
 
+    void add(socket& sock);
     socket wait(int timeout);
     bool expired();
     bool terminated();
