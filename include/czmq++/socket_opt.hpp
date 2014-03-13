@@ -5,6 +5,9 @@ inline void set_curve_server(int curve_server) {
 inline void set_curve_serverkey(const std::string& curve_serverkey) {
     zsocket_set_curve_serverkey(self_, curve_serverkey.c_str());
 }
+inline void set_zap_domain(const std::string& zap_domain) {
+    zsocket_set_zap_domain(self_, zap_domain.c_str());
+}
 inline void set_subscribe(const std::string& subscribe) {
     zsocket_set_subscribe(self_, subscribe.c_str());
 }
