@@ -31,8 +31,8 @@ void server_task(czmqpp::certificate server_cert)
     czmqpp::context ctx;
     assert(ctx.self());
 
-    //  Start the authenticator and tell it do authenticate clients
-    //  via the certificates stored in the .curve directory.
+    // Start the authenticator and tell it do authenticate clients
+    // via the certificates stored in the .curve directory.
     czmqpp::authenticator auth(ctx);
     auth.set_verbose(true);
     auth.allow("127.0.0.1");

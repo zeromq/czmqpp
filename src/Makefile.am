@@ -9,5 +9,6 @@ libczmq___la_SOURCES = \
     context.cpp \
     poller.cpp \
     message.cpp \
-    socket.cpp
+    socket.cpp \
+    thread.cpp
 

@@ -15,9 +15,15 @@ poller_test.o: poller_test.cpp
 poller_test: poller_test.o
 	$(CXX) -o $@ $< $(LIBS)
 
-all: ironhouse2 poller_test
+thread_test.o: thread_test.cpp
+	$(CXX) -o $@ -c $< $(CXXFLAGS)
+
+thread_test: thread_test.o
+	$(CXX) -o $@ $< $(LIBS)
+
+all: ironhouse2 poller_test thread_test
 
 clean:
-	rm -f ironhouse2 poller_test
+	rm -f ironhouse2 poller_test thread_test
 	rm -f *.o
 

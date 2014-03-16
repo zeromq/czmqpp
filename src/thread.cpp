@@ -17,16 +17,24 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef LIBCZMQPP_CZMQ_HPP
-#define LIBCZMQPP_CZMQ_HPP
-
-#include <czmq++/authenticator.hpp>
-#include <czmq++/certificate.hpp>
-#include <czmq++/context.hpp>
-#include <czmq++/socket.hpp>
-#include <czmq++/message.hpp>
-#include <czmq++/poller.hpp>
 #include <czmq++/thread.hpp>
 
-#endif
+namespace czmqpp {
+
+void internal_call_func(void* args, zctx_t* ctx, void* pipe)
+{
+    fork_callback* cb = static_cast<fork_callback*>(args);
+    czmqpp::socket pipe_socket(pipe);
+    (*cb)(pipe_socket);
+    delete cb;
+}
+
+czmqpp::socket thread_fork(czmqpp::context& ctx, fork_callback callback)
+{
+    fork_callback* cb_copy = new fork_callback(callback);
+    void *pipe = zthread_fork(ctx.self(), internal_call_func, cb_copy);
+    return czmqpp::socket(pipe);
+}
+
+} // namespace czmqpp
 

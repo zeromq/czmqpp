@@ -8,7 +8,8 @@ czmq___include_HEADERS = \
     message.hpp \
     poller.hpp \
     socket.hpp \
-    socket_opt.hpp
+    socket_opt.hpp \
+    thread.hpp
 
 czmq___impl_includedir = $(includedir)/czmq++/impl
 czmq___impl_include_HEADERS = \
