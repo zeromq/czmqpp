@@ -1,8 +1,5 @@
-All files in this repository fall under the license specified in LICENSE
-The project is licensed as AGPL with a lesser clause. It may be used within
-a proprietary project, but the core library and any changes to it must be
-published online. Source code for this library must always remain free for
-everybody to access.
+License: See LICENSE file (same as the libzmq license = LGPLv3 + static link exception)
+Contribution policy: http://rfc.zeromq.org/spec:22
 
 ==========================
 Debian/Ubuntu Instructions
