@@ -38,6 +38,12 @@ socket::socket(context& ctx, int type)
     self_ = zsocket_new(ctx.self(), type);
 }
 
+void socket::destroy(context& ctx)
+{
+    CZMQPP_ASSERT(self_);
+    zsocket_destroy(ctx.self(), self_);
+}
+
 void* socket::self()
 {
     return self_;

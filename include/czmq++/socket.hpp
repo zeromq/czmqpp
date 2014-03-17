@@ -32,7 +32,10 @@ public:
     socket(socket&& other);
     socket(const socket&) = delete;
     socket(context& ctx, int type);
+
     // context will delete the self_ for us.
+    // We can call this explicitly though.
+    void destroy(context& ctx);
 
     void* self();
     void* self() const;
