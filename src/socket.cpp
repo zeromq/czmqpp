@@ -27,6 +27,12 @@ socket::socket(void* self)
 {
     self_ = self;
 }
+socket::socket(socket&& other)
+{
+    CZMQPP_ASSERT(self_ == nullptr);
+    self_ = other.self_;
+    other.self_ = nullptr;
+}
 socket::socket(context& ctx, int type)
 {
     self_ = zsocket_new(ctx.self(), type);
