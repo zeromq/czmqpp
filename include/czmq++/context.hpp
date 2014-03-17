@@ -28,6 +28,7 @@ class context
 {
 public:
     context();
+    context(const context&) = delete;
     ~context();
 
     zctx_t* self();

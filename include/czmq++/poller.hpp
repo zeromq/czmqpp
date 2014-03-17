@@ -29,6 +29,7 @@ class poller
 public:
     template <typename... SocketArgs>
     poller(SocketArgs&&... sockets);
+    poller(const poller&) = delete;
     ~poller();
 
     zpoller_t* self();

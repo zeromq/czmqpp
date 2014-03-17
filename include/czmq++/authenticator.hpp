@@ -29,6 +29,7 @@ class authenticator
 {
 public:
     authenticator(context& ctx);
+    authenticator(const authenticator&) = delete;
     ~authenticator();
 
     zauth_t* self();

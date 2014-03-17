@@ -21,7 +21,7 @@
 
 namespace czmqpp {
 
-void internal_call_func(void* args, zctx_t* ctx, void* pipe)
+void internal_call_func(void* args, zctx_t*, void* pipe)
 {
     fork_callback* cb = static_cast<fork_callback*>(args);
     czmqpp::socket pipe_socket(pipe);
