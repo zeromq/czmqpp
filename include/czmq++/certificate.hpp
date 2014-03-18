@@ -42,8 +42,9 @@ public:
     zcert_t* self();
 
     void set_meta(const std::string& name, const std::string& value);
-    int save_public(const std::string& filename);
     int save(const std::string& filename);
+    int save_public(const std::string& filename);
+    int save_secret(const std::string& filename);
     std::string public_text() const;
     void apply(socket& sock);
 

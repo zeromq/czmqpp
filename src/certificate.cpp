@@ -65,13 +65,17 @@ void certificate::set_meta(const std::string& name, const std::string& value)
 {
     zcert_set_meta(self_, name.c_str(), value.c_str());
 }
+int certificate::save(const std::string& filename)
+{
+    return zcert_save(self_, filename.c_str());
+}
 int certificate::save_public(const std::string& filename)
 {
     return zcert_save_public(self_, filename.c_str());
 }
-int certificate::save(const std::string& filename)
+int certificate::save_secret(const std::string& filename)
 {
-    return zcert_save(self_, filename.c_str());
+    return zcert_save_secret(self_, filename.c_str());
 }
 std::string certificate::public_text() const
 {
