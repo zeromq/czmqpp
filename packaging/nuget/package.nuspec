@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+#################################################################
+#   GENERATED SOURCE CODE, DO NOT EDIT EXCEPT EXPERIMENTALLY    #
+#################################################################
+-->
+<package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
+    <metadata minClientVersion="2.5">
+        <id>czmqpp_vc120</id>
+        <version>1.0.0.0</version>
+        <title>czmqpp_vc120</title>
+        <authors>Amir Taaki</authors>
+        <owners>Eric Voskuil</owners>
+        <licenseUrl>https://raw.github.com/zeromq/czmqpp/master/COPYING</licenseUrl>
+        <projectUrl>https://github.com/zeromq/czmqpp</projectUrl>
+        <iconUrl>https://avatars1.githubusercontent.com/u/109777?s=32</iconUrl>
+        <requireLicenseAcceptance>true</requireLicenseAcceptance>
+        <developmentDependency>true</developmentDependency>
+        <description>The 0MQ lightweight messaging kernel is a library which extends the standard socket interfaces with features traditionally provided by specialised messaging middleware products. 0MQ sockets provide an abstraction of asynchronous message queues, multiple messaging patterns, message filtering (subscriptions), seamless access to multiple transport protocols and more.</description>
+        <summary>High-level C++ binding for 0MQ, packaged for Visual Studio 2013 (v120) and CTP_Nov2013 compilers.</summary>
+        <releaseNotes>https://github.com/zeromq/czmqpp/blob/master/NEWS</releaseNotes>
+        <copyright>GNU AFFERO GPL</copyright>
+        <tags>native, czmqpp, czmq++, czmq, libzmq, zmq, 0MQ, messaging, sockets, C++</tags>
+        <dependencies>
+            <dependency id="libzmq_vc120" version="4.1.0.2" />
+            <dependency id="czmq_vc120" version="2.2.0.4" />
+        </dependencies>
+    </metadata>
+    <files>
+        <!-- include -->
+        
+        <file src="..\..\include\czmq++\assert.hpp" target="build\native\include" />
+        <file src="..\..\include\czmq++\authenticator.hpp" target="build\native\include" />
+        <file src="..\..\include\czmq++\certificate.hpp" target="build\native\include" />
+        <file src="..\..\include\czmq++\context.hpp" target="build\native\include" />
+        <file src="..\..\include\czmq++\message.hpp" target="build\native\include" />
+        <file src="..\..\include\czmq++\poller.hpp" target="build\native\include" />
+        <file src="..\..\include\czmq++\socket.hpp" target="build\native\include" />
+        <file src="..\..\include\czmq++\socket_opt.hpp" target="build\native\include" />
+        <file src="..\..\include\czmq++\thread.hpp" target="build\native\include" />
+
+        <!-- targets -->
+      
+        <file src="package.targets" target="build\native\czmqpp_vc120.targets" />
+        <file src="package.xml" target="build\native\package.xml" />
+        
+        <!-- docs -->
+        
+        <!-- Documents (.*) -->
+        <!--<file src="..\..\docs\*" target="build\native\docs" />-->
+        
+        <!-- libraries -->
+
+        <!-- x86 Static libraries (.lib) -->
+        <file src="..\..\bin\Win32\Release\czmqpp12\czmqpp.lib" target="build\native\bin\czmqpp-x86-v120-mt-s-1_0_0_0.lib" />
+        <file src="..\..\bin\Win32\Debug\czmqpp12\czmqpp.lib" target="build\native\bin\czmqpp-x86-v120-mt-sgd-1_0_0_0.lib" />
+
+        <!-- x86 Static link time code generation libraries (.ltcg.lib) -->
+        <file src="..\..\bin\Win32\Release\czmqpp12\czmqpp.ltcg.lib" target="build\native\bin\czmqpp-x86-v120-mt-s-1_0_0_0.ltcg.lib" />
+        <file src="..\..\bin\Win32\Debug\czmqpp12\czmqpp.ltcg.lib" target="build\native\bin\czmqpp-x86-v120-mt-sgd-1_0_0_0.ltcg.lib" />
+
+        <!-- x64 Static libraries (.lib) -->
+        <file src="..\..\bin\x64\Release\czmqpp12\czmqpp.lib" target="build\native\bin\czmqpp-x64-v120-mt-s-1_0_0_0.lib" />
+        <file src="..\..\bin\x64\Debug\czmqpp12\czmqpp.lib" target="build\native\bin\czmqpp-x64-v120-mt-sgd-1_0_0_0.lib" />
+
+        <!-- x64 Static link time code generation libraries (.ltcg.lib) -->
+        <file src="..\..\bin\Win32\Release\czmqpp12\czmqpp.ltcg.lib" target="build\native\bin\czmqpp-x64-v120-mt-s-1_0_0_0.ltcg.lib" />
+        <file src="..\..\bin\Win32\Debug\czmqpp12\czmqpp.ltcg.lib" target="build\native\bin\czmqpp-x64-v120-mt-sgd-1_0_0_0.ltcg.lib" />
+    </files>
+<!--
+#################################################################
+#   GENERATED SOURCE CODE, DO NOT EDIT EXCEPT EXPERIMENTALLY    #
+#################################################################
+-->
+</package>
