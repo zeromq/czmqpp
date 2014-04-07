@@ -1,0 +1,189 @@
+.#  Generate NuGet nuspec file (for subsequent packing).
+.#
+.#  This is a code generator built using the iMatix GSL code generation
+.#  language. See https://github.com/imatix/gsl for details. This script
+.#  is licensed under MIT/X11.
+.#
+.echo "Generating package.nuspec from template."
+.output "package.nuspec"
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+#################################################################
+#   GENERATED SOURCE CODE, DO NOT EDIT EXCEPT EXPERIMENTALLY    #
+#################################################################
+-->
+<package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
+    <metadata minClientVersion="2.5">
+        <id>$(package.id)</id>
+        <version>$(package.version)</version>
+        <title>$(package.id)</title>
+        <authors>Amir Taaki</authors>
+        <owners>Eric Voskuil</owners>
+        <licenseUrl>https://raw.github.com/zeromq/czmqpp/master/COPYING</licenseUrl>
+        <projectUrl>https://github.com/zeromq/czmqpp</projectUrl>
+        <iconUrl>https://avatars1.githubusercontent.com/u/109777?s=32</iconUrl>
+        <requireLicenseAcceptance>true</requireLicenseAcceptance>
+        <developmentDependency>true</developmentDependency>
+        <description>The 0MQ lightweight messaging kernel is a library which extends the standard socket interfaces with features traditionally provided by specialised messaging middleware products. 0MQ sockets provide an abstraction of asynchronous message queues, multiple messaging patterns, message filtering (subscriptions), seamless access to multiple transport protocols and more.</description>
+        <summary>High-level C++ binding for 0MQ, packaged for Visual Studio 2013 (v120) and CTP_Nov2013 compilers.</summary>
+        <releaseNotes>https://github.com/zeromq/czmqpp/blob/master/NEWS</releaseNotes>
+        <copyright>GNU AFFERO GPL</copyright>
+        <tags>native, czmqpp, czmq++, czmq, libzmq, zmq, 0MQ, messaging, sockets, C++</tags>
+        <dependencies>
+            <dependency id="libzmq_vc120" version="4.1.0.3" />
+            <dependency id="czmq_vc120" version="2.2.0.6" />
+        </dependencies>
+    </metadata>
+    <files>
+        <!-- include -->
+        
+        <file src="..\\..\\include\\czmq++\\assert.hpp" target="build\\native\\include\\czmq++" />
+        <file src="..\\..\\include\\czmq++\\authenticator.hpp" target="build\\native\\include\\czmq++" />
+        <file src="..\\..\\include\\czmq++\\certificate.hpp" target="build\\native\\include\\czmq++" />
+        <file src="..\\..\\include\\czmq++\\context.hpp" target="build\\native\\include\\czmq++" />
+        <file src="..\\..\\include\\czmq++\\czmq.hpp" target="build\\native\\include\\czmq++" />
+        <file src="..\\..\\include\\czmq++\\message.hpp" target="build\\native\\include\\czmq++" />
+        <file src="..\\..\\include\\czmq++\\poller.hpp" target="build\\native\\include\\czmq++" />
+        <file src="..\\..\\include\\czmq++\\socket.hpp" target="build\\native\\include\\czmq++" />
+        <file src="..\\..\\include\\czmq++\\socket_opt.hpp" target="build\\native\\include\\czmq++" />
+        <file src="..\\..\\include\\czmq++\\thread.hpp" target="build\\native\\include\\czmq++" />
+        <file src="..\\..\\include\\czmq++\\impl\\poller.ipp" target="build\\native\\include\\czmq++\\impl" />
+
+        <!-- targets -->
+      
+        <file src="package.targets" target="build\\native\\$(package.id).targets" />
+        <file src="package.xml" target="build\\native\\package.xml" />
+        
+        <!-- docs -->
+        
+        <!-- Documents (.*) -->
+        <!--<file src="..\\..\\docs\\*" target="build\\native\\docs" />-->
+        
+        <!-- libraries -->
+
+        <!-- x86 Static libraries (.lib) -->
+        <file src="..\\..\\bin\\Win32\\Release\\$(package.namespace)\\$(package.target).lib" target="build\\native\\bin\\$(package.target)-x86-$(package.platformtoolset)-mt-s-$(package.pathversion).lib" />
+        <file src="..\\..\\bin\\Win32\\Debug\\$(package.namespace)\\$(package.target).lib" target="build\\native\\bin\\$(package.target)-x86-$(package.platformtoolset)-mt-sgd-$(package.pathversion).lib" />
+
+        <!-- x86 Static link time code generation libraries (.ltcg.lib) -->
+        <file src="..\\..\\bin\\Win32\\Release\\$(package.namespace)\\$(package.target).ltcg.lib" target="build\\native\\bin\\$(package.target)-x86-$(package.platformtoolset)-mt-s-$(package.pathversion).ltcg.lib" />
+        <file src="..\\..\\bin\\Win32\\Debug\\$(package.namespace)\\$(package.target).ltcg.lib" target="build\\native\\bin\\$(package.target)-x86-$(package.platformtoolset)-mt-sgd-$(package.pathversion).ltcg.lib" />
+
+        <!-- x64 Static libraries (.lib) -->
+        <file src="..\\..\\bin\\x64\\Release\\$(package.namespace)\\$(package.target).lib" target="build\\native\\bin\\$(package.target)-x64-$(package.platformtoolset)-mt-s-$(package.pathversion).lib" />
+        <file src="..\\..\\bin\\x64\\Debug\\$(package.namespace)\\$(package.target).lib" target="build\\native\\bin\\$(package.target)-x64-$(package.platformtoolset)-mt-sgd-$(package.pathversion).lib" />
+
+        <!-- x64 Static link time code generation libraries (.ltcg.lib) -->
+        <file src="..\\..\\bin\\Win32\\Release\\$(package.namespace)\\$(package.target).ltcg.lib" target="build\\native\\bin\\$(package.target)-x64-$(package.platformtoolset)-mt-s-$(package.pathversion).ltcg.lib" />
+        <file src="..\\..\\bin\\Win32\\Debug\\$(package.namespace)\\$(package.target).ltcg.lib" target="build\\native\\bin\\$(package.target)-x64-$(package.platformtoolset)-mt-sgd-$(package.pathversion).ltcg.lib" />
+    </files>
+<!--
+#################################################################
+#   GENERATED SOURCE CODE, DO NOT EDIT EXCEPT EXPERIMENTALLY    #
+#################################################################
+-->
+</package>
+.echo "Generating package.targets from template."
+.output "package.targets"
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+#################################################################
+#   GENERATED SOURCE CODE, DO NOT EDIT EXCEPT EXPERIMENTALLY    #
+#################################################################
+-->
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- user interface -->
+  <ItemGroup>
+    <PropertyPageSchema Include="$\(MSBuildThisFileDirectory)package.xml" />
+  </ItemGroup>
+
+  <!-- general -->
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$\(MSBuildThisFileDirectory)include\\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$\(MSBuildThisFileDirectory)bin\\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$\($(package.target)-linkage-nuget)' == 'static' Or '$\($(package.target)-linkage-nuget)' == 'ltcg'">
+    <ClCompile>
+      <PreprocessorDefinitions>LIBCZMQ_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <!-- static libraries -->
+  <ItemDefinitionGroup Condition="'$\(Platform)' == 'Win32' And ('$\(PlatformToolset)' == '$(package.platformtoolset)' Or '$\(PlatformToolset)' == 'CTP_Nov2013') And '$\(Linkage-$(package.target))' == 'static' And $\(Configuration.IndexOf('Release')) != -1">
+    <Link>
+      <AdditionalDependencies>$(package.target)-x86-$(package.platformtoolset)-mt-s-$(package.pathversion).lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$\(Platform)' == 'Win32' And ('$\(PlatformToolset)' == '$(package.platformtoolset)' Or '$\(PlatformToolset)' == 'CTP_Nov2013') And '$\(Linkage-$(package.target))' == 'static' And $\(Configuration.IndexOf('Debug')) != -1">
+    <Link>
+      <AdditionalDependencies>$(package.target)-x86-$(package.platformtoolset)-mt-sgd-$(package.pathversion).lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$\(Platform)' == 'x64' And ('$\(PlatformToolset)' == '$(package.platformtoolset)' Or '$\(PlatformToolset)' == 'CTP_Nov2013') And '$\(Linkage-$(package.target))' == 'static' And $\(Configuration.IndexOf('Release')) != -1">
+    <Link>
+      <AdditionalDependencies>$(package.target)-x64-$(package.platformtoolset)-mt-s-$(package.pathversion).lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$\(Platform)' == 'x64' And ('$\(PlatformToolset)' == '$(package.platformtoolset)' Or '$\(PlatformToolset)' == 'CTP_Nov2013') And '$\(Linkage-$(package.target))' == 'static' And $\(Configuration.IndexOf('Debug')) != -1">
+    <Link>
+      <AdditionalDependencies>$(package.target)-x64-$(package.platformtoolset)-mt-sgd-$(package.pathversion).lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <!-- static ltcg libraries -->
+  <ItemDefinitionGroup Condition="'$\(Platform)' == 'Win32' And ('$\(PlatformToolset)' == '$(package.platformtoolset)' Or '$\(PlatformToolset)' == 'CTP_Nov2013') And '$\(Linkage-$(package.target))' == 'ltcg' And $\(Configuration.IndexOf('Release')) != -1">
+    <Link>
+      <AdditionalDependencies>$(package.target)-x86-$(package.platformtoolset)-mt-s-$(package.pathversion).ltcg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$\(Platform)' == 'Win32' And ('$\(PlatformToolset)' == '$(package.platformtoolset)' Or '$\(PlatformToolset)' == 'CTP_Nov2013') And '$\(Linkage-$(package.target))' == 'ltcg' And $\(Configuration.IndexOf('Debug')) != -1">
+    <Link>
+      <AdditionalDependencies>$(package.target)-x86-$(package.platformtoolset)-mt-sgd-$(package.pathversion).ltcg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$\(Platform)' == 'x64' And ('$\(PlatformToolset)' == '$(package.platformtoolset)' Or '$\(PlatformToolset)' == 'CTP_Nov2013') And '$\(Linkage-$(package.target))' == 'ltcg' And $\(Configuration.IndexOf('Release')) != -1">
+    <Link>
+      <AdditionalDependencies>$(package.target)-x64-$(package.platformtoolset)-mt-s-$(package.pathversion).ltcg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$\(Platform)' == 'x64' And ('$\(PlatformToolset)' == '$(package.platformtoolset)' Or '$\(PlatformToolset)' == 'CTP_Nov2013') And '$\(Linkage-$(package.target))' == 'ltcg' And $\(Configuration.IndexOf('Debug')) != -1">
+    <Link>
+      <AdditionalDependencies>$(package.target)-x64-$(package.platformtoolset)-mt-sgd-$(package.pathversion).ltcg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  
+<!--
+#################################################################
+#   GENERATED SOURCE CODE, DO NOT EDIT EXCEPT EXPERIMENTALLY    #
+#################################################################
+-->
+</Project>
+.echo "Generating package.xml (ui extension) from template."
+.output "package.xml"
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+#################################################################
+#   GENERATED SOURCE CODE, DO NOT EDIT EXCEPT EXPERIMENTALLY    #
+#################################################################
+-->
+<ProjectSchemaDefinitions xmlns="clr-namespace:Microsoft.Build.Framework.XamlTypes;assembly=Microsoft.Build.Framework">
+  <Rule Name="Linkage-$(package.target)-uiextension" PageTemplate="tool" DisplayName="NuGet Dependencies" SwitchPrefix="/" Order="1">
+    <Rule.Categories>
+      <Category Name="$(package.target)" DisplayName="$(package.target)" />
+    </Rule.Categories>
+    <Rule.DataSource>
+      <DataSource Persistence="ProjectFile" ItemType="" />
+    </Rule.DataSource>
+    <EnumProperty Name="Linkage-$(package.target)" DisplayName="Linkage" Description="How NuGet $(package.target) will be linked into the output of this project" Category="$(package.target)">
+      <EnumValue Name="" DisplayName="Not linked" />
+      <EnumValue Name="dynamic" DisplayName="Dynamic (DLL) - NOT IMPLEMENTED" />
+      <EnumValue Name="static" DisplayName="Static (LIB)" />
+      <EnumValue Name="ltcg" DisplayName="Static using link time compile generation (LTCG)" />
+    </EnumProperty>
+  </Rule>
+</ProjectSchemaDefinitions>
