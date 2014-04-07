@@ -10,25 +10,25 @@
 
   <!-- Dependency linkage -->
 
-  <ItemDefinitionGroup Condition="'$(czmq-linkage-local)' != ''">
+  <ItemDefinitionGroup Condition="'$(Linkage-czmq)' != ''">
     <ClCompile>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\..\..\czmq\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
 
-  <ItemDefinitionGroup Condition="'$(czmq-linkage-local)' == 'dynamic'">
+  <ItemDefinitionGroup Condition="'$(Linkage-czmq)' == 'dynamic'">
     <ClCompile>
       <PreprocessorDefinitions>LIBCZMQ_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
 
-  <ItemDefinitionGroup Condition="'$(czmq-linkage-local)' == 'static' Or '$(czmq-linkage-local)' == 'ltcg'">
+  <ItemDefinitionGroup Condition="'$(Linkage-czmq)' == 'static' Or '$(Linkage-czmq)' == 'ltcg'">
     <ClCompile>
       <PreprocessorDefinitions>LIBCZMQ_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
 
-  <ItemDefinitionGroup Condition="'$(czmq-linkage-local)' == 'dynamic'">
+  <ItemDefinitionGroup Condition="'$(Linkage-czmq)' == 'dynamic'">
     <Link Condition="$(Configuration.IndexOf('Debug')) != -1">
       <AdditionalDependencies>$(ProjectDir)..\..\..\..\..\czmq\bin\$(PlatformName)\Debug\czmq12\czmq.imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
@@ -37,7 +37,7 @@
     </Link>
   </ItemDefinitionGroup>
 
-  <ItemDefinitionGroup Condition="'$(czmq-linkage-local)' == 'static'">
+  <ItemDefinitionGroup Condition="'$(Linkage-czmq)' == 'static'">
     <Link Condition="$(Configuration.IndexOf('Debug')) != -1">
       <AdditionalDependencies>$(ProjectDir)..\..\..\..\..\czmq\bin\$(PlatformName)\Debug\czmq12\czmq.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
@@ -46,7 +46,7 @@
     </Link>
   </ItemDefinitionGroup>
 
-  <ItemDefinitionGroup Condition="'$(czmq-linkage-local)' == 'ltcg'">
+  <ItemDefinitionGroup Condition="'$(Linkage-czmq)' == 'ltcg'">
     <Link Condition="$(Configuration.IndexOf('Debug')) != -1">
       <AdditionalDependencies>$(ProjectDir)..\..\..\..\..\czmq\bin\$(PlatformName)\Debug\czmq12\czmq.ltcg.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
@@ -57,7 +57,7 @@
 
   <!-- Copy dynamic libraries to target -->
 
-  <Target Name="czmq-linkage-local-dynamic" AfterTargets="AfterBuild" Condition="'$(czmq-linkage-local)' == 'dynamic'">
+  <Target Name="Linkage-czmq-dynamic" AfterTargets="AfterBuild" Condition="'$(Linkage-czmq)' == 'dynamic'">
     <Copy Condition="$(Configuration.IndexOf('Debug')) != -1"
           SourceFiles="$(ProjectDir)..\..\..\..\..\czmq\bin\$(PlatformName)\Debug\czmq12\czmq.dll"
           DestinationFiles="$(TargetDir)czmq.dll"
@@ -74,7 +74,7 @@
 
   <!-- Messages -->
 
-  <Target Name="czmq-info" BeforeTargets="AfterBuild" Condition="'$(czmq-linkage-local)' == 'dynamic'">
+  <Target Name="czmq-info" BeforeTargets="AfterBuild" Condition="'$(Linkage-czmq)' == 'dynamic'">
     <Message Text="Copying czmq.dll -&gt; $(TargetDir)czmq.dll" Importance="high"/>
     <Message Text="Copying czmq.pdb -&gt; $(TargetDir)czmq.pdb" Importance="high" Condition="$(Configuration.IndexOf('Debug')) != -1" />
   </Target>

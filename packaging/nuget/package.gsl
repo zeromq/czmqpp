@@ -30,22 +30,24 @@
         <copyright>GNU AFFERO GPL</copyright>
         <tags>native, czmqpp, czmq++, czmq, libzmq, zmq, 0MQ, messaging, sockets, C++</tags>
         <dependencies>
-            <dependency id="libzmq_vc120" version="4.1.0.2" />
-            <dependency id="czmq_vc120" version="2.2.0.4" />
+            <dependency id="libzmq_vc120" version="4.1.0.3" />
+            <dependency id="czmq_vc120" version="2.2.0.6" />
         </dependencies>
     </metadata>
     <files>
         <!-- include -->
         
-        <file src="..\\..\\include\\czmq++\\assert.hpp" target="build\\native\\include" />
-        <file src="..\\..\\include\\czmq++\\authenticator.hpp" target="build\\native\\include" />
-        <file src="..\\..\\include\\czmq++\\certificate.hpp" target="build\\native\\include" />
-        <file src="..\\..\\include\\czmq++\\context.hpp" target="build\\native\\include" />
-        <file src="..\\..\\include\\czmq++\\message.hpp" target="build\\native\\include" />
-        <file src="..\\..\\include\\czmq++\\poller.hpp" target="build\\native\\include" />
-        <file src="..\\..\\include\\czmq++\\socket.hpp" target="build\\native\\include" />
-        <file src="..\\..\\include\\czmq++\\socket_opt.hpp" target="build\\native\\include" />
-        <file src="..\\..\\include\\czmq++\\thread.hpp" target="build\\native\\include" />
+        <file src="..\\..\\include\\czmq++\\assert.hpp" target="build\\native\\include\\czmq++" />
+        <file src="..\\..\\include\\czmq++\\authenticator.hpp" target="build\\native\\include\\czmq++" />
+        <file src="..\\..\\include\\czmq++\\certificate.hpp" target="build\\native\\include\\czmq++" />
+        <file src="..\\..\\include\\czmq++\\context.hpp" target="build\\native\\include\\czmq++" />
+        <file src="..\\..\\include\\czmq++\\czmq.hpp" target="build\\native\\include\\czmq++" />
+        <file src="..\\..\\include\\czmq++\\message.hpp" target="build\\native\\include\\czmq++" />
+        <file src="..\\..\\include\\czmq++\\poller.hpp" target="build\\native\\include\\czmq++" />
+        <file src="..\\..\\include\\czmq++\\socket.hpp" target="build\\native\\include\\czmq++" />
+        <file src="..\\..\\include\\czmq++\\socket_opt.hpp" target="build\\native\\include\\czmq++" />
+        <file src="..\\..\\include\\czmq++\\thread.hpp" target="build\\native\\include\\czmq++" />
+        <file src="..\\..\\include\\czmq++\\impl\\poller.ipp" target="build\\native\\include\\czmq++\\impl" />
 
         <!-- targets -->
       
@@ -112,44 +114,44 @@
   </ItemDefinitionGroup>
 
   <!-- static libraries -->
-  <ItemDefinitionGroup Condition="'$\(Platform)' == 'Win32' And ('$\(PlatformToolset)' == '$(package.platformtoolset)' Or '$\(PlatformToolset)' == 'CTP_Nov2013') And '$\($(package.target)-linkage-nuget)' == 'static' And $\(Configuration.IndexOf('Release')) != -1">
+  <ItemDefinitionGroup Condition="'$\(Platform)' == 'Win32' And ('$\(PlatformToolset)' == '$(package.platformtoolset)' Or '$\(PlatformToolset)' == 'CTP_Nov2013') And '$\(Linkage-$(package.target))' == 'static' And $\(Configuration.IndexOf('Release')) != -1">
     <Link>
       <AdditionalDependencies>$(package.target)-x86-$(package.platformtoolset)-mt-s-$(package.pathversion).lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$\(Platform)' == 'Win32' And ('$\(PlatformToolset)' == '$(package.platformtoolset)' Or '$\(PlatformToolset)' == 'CTP_Nov2013') And '$\($(package.target)-linkage-nuget)' == 'static' And $\(Configuration.IndexOf('Debug')) != -1">
+  <ItemDefinitionGroup Condition="'$\(Platform)' == 'Win32' And ('$\(PlatformToolset)' == '$(package.platformtoolset)' Or '$\(PlatformToolset)' == 'CTP_Nov2013') And '$\(Linkage-$(package.target))' == 'static' And $\(Configuration.IndexOf('Debug')) != -1">
     <Link>
       <AdditionalDependencies>$(package.target)-x86-$(package.platformtoolset)-mt-sgd-$(package.pathversion).lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$\(Platform)' == 'x64' And ('$\(PlatformToolset)' == '$(package.platformtoolset)' Or '$\(PlatformToolset)' == 'CTP_Nov2013') And '$\($(package.target)-linkage-nuget)' == 'static' And $\(Configuration.IndexOf('Release')) != -1">
+  <ItemDefinitionGroup Condition="'$\(Platform)' == 'x64' And ('$\(PlatformToolset)' == '$(package.platformtoolset)' Or '$\(PlatformToolset)' == 'CTP_Nov2013') And '$\(Linkage-$(package.target))' == 'static' And $\(Configuration.IndexOf('Release')) != -1">
     <Link>
       <AdditionalDependencies>$(package.target)-x64-$(package.platformtoolset)-mt-s-$(package.pathversion).lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$\(Platform)' == 'x64' And ('$\(PlatformToolset)' == '$(package.platformtoolset)' Or '$\(PlatformToolset)' == 'CTP_Nov2013') And '$\($(package.target)-linkage-nuget)' == 'static' And $\(Configuration.IndexOf('Debug')) != -1">
+  <ItemDefinitionGroup Condition="'$\(Platform)' == 'x64' And ('$\(PlatformToolset)' == '$(package.platformtoolset)' Or '$\(PlatformToolset)' == 'CTP_Nov2013') And '$\(Linkage-$(package.target))' == 'static' And $\(Configuration.IndexOf('Debug')) != -1">
     <Link>
       <AdditionalDependencies>$(package.target)-x64-$(package.platformtoolset)-mt-sgd-$(package.pathversion).lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
 
   <!-- static ltcg libraries -->
-  <ItemDefinitionGroup Condition="'$\(Platform)' == 'Win32' And ('$\(PlatformToolset)' == '$(package.platformtoolset)' Or '$\(PlatformToolset)' == 'CTP_Nov2013') And '$\($(package.target)-linkage-nuget)' == 'ltcg' And $\(Configuration.IndexOf('Release')) != -1">
+  <ItemDefinitionGroup Condition="'$\(Platform)' == 'Win32' And ('$\(PlatformToolset)' == '$(package.platformtoolset)' Or '$\(PlatformToolset)' == 'CTP_Nov2013') And '$\(Linkage-$(package.target))' == 'ltcg' And $\(Configuration.IndexOf('Release')) != -1">
     <Link>
       <AdditionalDependencies>$(package.target)-x86-$(package.platformtoolset)-mt-s-$(package.pathversion).ltcg.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$\(Platform)' == 'Win32' And ('$\(PlatformToolset)' == '$(package.platformtoolset)' Or '$\(PlatformToolset)' == 'CTP_Nov2013') And '$\($(package.target)-linkage-nuget)' == 'ltcg' And $\(Configuration.IndexOf('Debug')) != -1">
+  <ItemDefinitionGroup Condition="'$\(Platform)' == 'Win32' And ('$\(PlatformToolset)' == '$(package.platformtoolset)' Or '$\(PlatformToolset)' == 'CTP_Nov2013') And '$\(Linkage-$(package.target))' == 'ltcg' And $\(Configuration.IndexOf('Debug')) != -1">
     <Link>
       <AdditionalDependencies>$(package.target)-x86-$(package.platformtoolset)-mt-sgd-$(package.pathversion).ltcg.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$\(Platform)' == 'x64' And ('$\(PlatformToolset)' == '$(package.platformtoolset)' Or '$\(PlatformToolset)' == 'CTP_Nov2013') And '$\($(package.target)-linkage-nuget)' == 'ltcg' And $\(Configuration.IndexOf('Release')) != -1">
+  <ItemDefinitionGroup Condition="'$\(Platform)' == 'x64' And ('$\(PlatformToolset)' == '$(package.platformtoolset)' Or '$\(PlatformToolset)' == 'CTP_Nov2013') And '$\(Linkage-$(package.target))' == 'ltcg' And $\(Configuration.IndexOf('Release')) != -1">
     <Link>
       <AdditionalDependencies>$(package.target)-x64-$(package.platformtoolset)-mt-s-$(package.pathversion).ltcg.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$\(Platform)' == 'x64' And ('$\(PlatformToolset)' == '$(package.platformtoolset)' Or '$\(PlatformToolset)' == 'CTP_Nov2013') And '$\($(package.target)-linkage-nuget)' == 'ltcg' And $\(Configuration.IndexOf('Debug')) != -1">
+  <ItemDefinitionGroup Condition="'$\(Platform)' == 'x64' And ('$\(PlatformToolset)' == '$(package.platformtoolset)' Or '$\(PlatformToolset)' == 'CTP_Nov2013') And '$\(Linkage-$(package.target))' == 'ltcg' And $\(Configuration.IndexOf('Debug')) != -1">
     <Link>
       <AdditionalDependencies>$(package.target)-x64-$(package.platformtoolset)-mt-sgd-$(package.pathversion).ltcg.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
@@ -177,8 +179,9 @@
     <Rule.DataSource>
       <DataSource Persistence="ProjectFile" ItemType="" />
     </Rule.DataSource>
-    <EnumProperty Name="$(package.target)-linkage-nuget" DisplayName="Linkage" Description="How NuGet $(package.target) will be linked into the output of this project" Category="$(package.target)">
-      <EnumValue Name="" DisplayName="Dynamic (DLL) - NOT IMPLEMENTED" />
+    <EnumProperty Name="Linkage-$(package.target)" DisplayName="Linkage" Description="How NuGet $(package.target) will be linked into the output of this project" Category="$(package.target)">
+      <EnumValue Name="" DisplayName="Not linked" />
+      <EnumValue Name="dynamic" DisplayName="Dynamic (DLL) - NOT IMPLEMENTED" />
       <EnumValue Name="static" DisplayName="Static (LIB)" />
       <EnumValue Name="ltcg" DisplayName="Static using link time compile generation (LTCG)" />
     </EnumProperty>
