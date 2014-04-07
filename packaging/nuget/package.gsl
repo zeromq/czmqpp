@@ -172,7 +172,7 @@
 #################################################################
 -->
 <ProjectSchemaDefinitions xmlns="clr-namespace:Microsoft.Build.Framework.XamlTypes;assembly=Microsoft.Build.Framework">
-  <Rule Name="$(package.target)-linkage-nuget-uiextension" PageTemplate="tool" DisplayName="NuGet Dependencies" SwitchPrefix="/" Order="1">
+  <Rule Name="Linkage-$(package.target)-uiextension" PageTemplate="tool" DisplayName="NuGet Dependencies" SwitchPrefix="/" Order="1">
     <Rule.Categories>
       <Category Name="$(package.target)" DisplayName="$(package.target)" />
     </Rule.Categories>

@@ -5,7 +5,7 @@
 #################################################################
 -->
 <ProjectSchemaDefinitions xmlns="clr-namespace:Microsoft.Build.Framework.XamlTypes;assembly=Microsoft.Build.Framework">
-  <Rule Name="czmqpp-linkage-nuget-uiextension" PageTemplate="tool" DisplayName="NuGet Dependencies" SwitchPrefix="/" Order="1">
+  <Rule Name="Linkage-czmqpp-uiextension" PageTemplate="tool" DisplayName="NuGet Dependencies" SwitchPrefix="/" Order="1">
     <Rule.Categories>
       <Category Name="czmqpp" DisplayName="czmqpp" />
     </Rule.Categories>
