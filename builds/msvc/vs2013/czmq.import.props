@@ -3,22 +3,20 @@
 
   <PropertyGroup Label="Globals">
     <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
-    <_PropertySheetDisplayName>ZMQ Import Settings</_PropertySheetDisplayName>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <_PropertySheetDisplayName>CZMQ Import Settings</_PropertySheetDisplayName>
   </PropertyGroup>
+  
+  <!-- User Interface -->
 
-  <!-- Dependency linkage -->
+  <ItemGroup Label="BuildOptionsExtension">
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)czmq.import.xml" />
+  </ItemGroup>
 
-  <ItemDefinitionGroup Condition="'$(Linkage-czmq)' != ''">
+  <!-- Configuration -->
+
+  <ItemDefinitionGroup>
     <ClCompile>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\..\..\czmq\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
-  </ItemDefinitionGroup>
-
-  <ItemDefinitionGroup Condition="'$(Linkage-czmq)' == 'dynamic'">
-    <ClCompile>
-      <PreprocessorDefinitions>LIBCZMQ_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
 
@@ -28,7 +26,7 @@
     </ClCompile>
   </ItemDefinitionGroup>
 
-  <ItemDefinitionGroup Condition="'$(Linkage-czmq)' == 'dynamic'">
+    <ItemDefinitionGroup Condition="'$(Linkage-czmq)' == 'dynamic'">
     <Link Condition="$(Configuration.IndexOf('Debug')) != -1">
       <AdditionalDependencies>$(ProjectDir)..\..\..\..\..\czmq\bin\$(PlatformName)\Debug\czmq12\czmq.imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
@@ -55,7 +53,7 @@
     </Link>
   </ItemDefinitionGroup>
 
-  <!-- Copy dynamic libraries to target -->
+  <!-- Copy -->
 
   <Target Name="Linkage-czmq-dynamic" AfterTargets="AfterBuild" Condition="'$(Linkage-czmq)' == 'dynamic'">
     <Copy Condition="$(Configuration.IndexOf('Debug')) != -1"
