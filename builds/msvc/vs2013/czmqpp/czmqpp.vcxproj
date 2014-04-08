@@ -168,26 +168,6 @@
     <Import Project="$(ProjectDir)..\properties\StaticRelease.props" />
     <Import Project="$(ProjectDir)..\properties\x64.props" />
   </ImportGroup>
-  <ItemGroup Label="BuildOptionsExtension">
-    <PropertyPageSchema Include="..\libzmq.import.xml" />
-    <PropertyPageSchema Include="..\czmq.import.xml" />
-  </ItemGroup>
-  <ImportGroup Label="PropertySheets">
-    <Import Project="..\libzmq.import.props" />
-    <Import Project="..\czmq.import.props" />
-  </ImportGroup>
-  <PropertyGroup Condition="$(Configuration.IndexOf('DLL')) != -1">
-    <libzmq-linkage-local>dynamic</libzmq-linkage-local>
-    <czmq-linkage-local>dynamic</czmq-linkage-local>
-  </PropertyGroup>
-  <PropertyGroup Condition="$(Configuration.IndexOf('LTCG')) != -1">
-    <libzmq-linkage-local>ltcg</libzmq-linkage-local>
-    <czmq-linkage-local>ltcg</czmq-linkage-local>
-  </PropertyGroup>
-  <PropertyGroup Condition="$(Configuration.IndexOf('LIB')) != -1">
-    <libzmq-linkage-local>static</libzmq-linkage-local>
-    <czmq-linkage-local>static</czmq-linkage-local>
-  </PropertyGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\src\authenticator.cpp" />
     <ClCompile Include="..\..\..\..\src\certificate.cpp" />
