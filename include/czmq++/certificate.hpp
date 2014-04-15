@@ -26,16 +26,15 @@
 
 namespace czmqpp {
 
-zcert_t* new_cert();
-zcert_t* load_cert(const std::string& filename);
+CZMQ_EXPORT zcert_t* new_cert();
+CZMQ_EXPORT zcert_t* load_cert(const std::string& filename);
 
-class certificate
+class CZMQ_EXPORT certificate
 {
 public:
     certificate();
     certificate(zcert_t* self);
     certificate(certificate&& other);
-    certificate(const certificate&) = delete;
     ~certificate();
 
     void reset(zcert_t* self);
@@ -49,7 +48,9 @@ public:
     void apply(socket& sock);
 
 private:
-    zcert_t* self_ = nullptr;
+    certificate(const certificate&);
+
+    zcert_t* self_;
 };
 
 } // namespace czmqpp
