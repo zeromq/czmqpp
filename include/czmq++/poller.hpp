@@ -24,7 +24,7 @@
 
 namespace czmqpp {
 
-class poller
+class CZMQ_EXPORT poller
 {
 public:
     poller();

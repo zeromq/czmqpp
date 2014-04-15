@@ -26,10 +26,10 @@
 
 namespace czmqpp {
 
-zcert_t* new_cert();
-zcert_t* load_cert(const std::string& filename);
+CZMQ_EXPORT zcert_t* new_cert();
+CZMQ_EXPORT zcert_t* load_cert(const std::string& filename);
 
-class certificate
+class CZMQ_EXPORT certificate
 {
 public:
     certificate();
