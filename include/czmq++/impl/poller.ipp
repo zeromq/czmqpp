@@ -21,14 +21,14 @@
 
 namespace czmqpp {
 
-template <typename... SocketArgs>
-poller::poller(SocketArgs&&... sockets)
+template <typename SocketArgs>
+poller::poller(SocketArgs&& sockets)
 {
     auto unmask = [](socket& s)
     {
         return s.self();
     };
-    self_ = zpoller_new(unmask(sockets)..., NULL);
+    self_ = zpoller_new(unmask(sockets), NULL);
     CZMQPP_ASSERT(self_);
 }
 

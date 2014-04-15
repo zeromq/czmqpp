@@ -28,13 +28,14 @@ class context
 {
 public:
     context();
-    context(const context&) = delete;
     ~context();
 
     zctx_t* self();
 
 private:
-    zctx_t* self_ = nullptr;
+    context(const context&);
+
+    zctx_t* self_;
 };
 
 } // namespace czmqpp
