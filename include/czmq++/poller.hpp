@@ -20,11 +20,12 @@
 #ifndef LIBCZMQPP_POLLER_HPP
 #define LIBCZMQPP_POLLER_HPP
 
+#include <czmq++/define.hpp>
 #include <czmq++/socket.hpp>
 
 namespace czmqpp {
 
-class CZMQ_EXPORT poller
+class CZMQPP_EXPORT poller
 {
 public:
     poller();

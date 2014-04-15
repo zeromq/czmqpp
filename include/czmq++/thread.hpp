@@ -22,13 +22,14 @@
 
 #include <functional>
 #include <czmq++/context.hpp>
+#include <czmq++/define.hpp>
 #include <czmq++/socket.hpp>
 
 namespace czmqpp {
 
-typedef CZMQ_EXPORT std::function<void (czmqpp::socket&)> fork_callback;
+typedef CZMQPP_EXPORT std::function<void (czmqpp::socket&)> fork_callback;
 
-CZMQ_EXPORT czmqpp::socket thread_fork(czmqpp::context& ctx, fork_callback callback);
+CZMQPP_EXPORT czmqpp::socket thread_fork(czmqpp::context& ctx, fork_callback callback);
 
 } // namespace czmqpp
 

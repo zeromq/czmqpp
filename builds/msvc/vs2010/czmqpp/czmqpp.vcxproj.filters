@@ -38,9 +38,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\include\czmq++\assert.hpp">
-      <Filter>include</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\..\include\czmq++\authenticator.hpp">
       <Filter>include</Filter>
     </ClInclude>
@@ -66,6 +63,9 @@
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\include\czmq++\czmq.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\czmq++\define.hpp">
       <Filter>include</Filter>
     </ClInclude>
   </ItemGroup>

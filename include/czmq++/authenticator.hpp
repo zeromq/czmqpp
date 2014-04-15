@@ -22,10 +22,11 @@
 
 #include <string>
 #include <czmq++/context.hpp>
+#include <czmq++/define.hpp>
 
 namespace czmqpp {
 
-class CZMQ_EXPORT authenticator
+class CZMQPP_EXPORT authenticator
 {
 public:
     authenticator(context& ctx);

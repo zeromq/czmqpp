@@ -21,11 +21,12 @@
 #define LIBCZMQPP_SOCKET_HPP
 
 #include <string>
+#include <czmq++/define.hpp>
 #include <czmq++/context.hpp>
 
 namespace czmqpp {
 
-class CZMQ_EXPORT socket
+class CZMQPP_EXPORT socket
 {
 public:
     socket(void* self);
