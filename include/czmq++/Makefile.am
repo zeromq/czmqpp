@@ -2,6 +2,7 @@ czmq___includedir = $(includedir)/czmq++
 czmq___include_HEADERS = \
     czmq.hpp \
     assert.hpp \
+    define.hpp \
     authenticator.hpp \
     certificate.hpp \
     context.hpp \
