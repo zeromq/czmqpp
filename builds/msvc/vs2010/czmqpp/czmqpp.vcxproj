@@ -186,11 +186,11 @@
     <None Include="..\..\..\..\packaging\nuget\package.targets" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\include\czmq++\assert.hpp" />
     <ClInclude Include="..\..\..\..\include\czmq++\authenticator.hpp" />
     <ClInclude Include="..\..\..\..\include\czmq++\certificate.hpp" />
     <ClInclude Include="..\..\..\..\include\czmq++\context.hpp" />
     <ClInclude Include="..\..\..\..\include\czmq++\czmq.hpp" />
+    <ClInclude Include="..\..\..\..\include\czmq++\define.hpp" />
     <ClInclude Include="..\..\..\..\include\czmq++\message.hpp" />
     <ClInclude Include="..\..\..\..\include\czmq++\poller.hpp" />
     <ClInclude Include="..\..\..\..\include\czmq++\socket.hpp" />

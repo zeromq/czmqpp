@@ -20,6 +20,8 @@
 #ifndef LIBCZMQPP_CZMQ_HPP
 #define LIBCZMQPP_CZMQ_HPP
 
+// TODO: rename this file to czmqpp.hpp
+
 #include <czmq++/authenticator.hpp>
 #include <czmq++/certificate.hpp>
 #include <czmq++/context.hpp>

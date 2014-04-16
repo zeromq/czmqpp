@@ -21,10 +21,11 @@
 #define LIBCZMQPP_CONTEXT_HPP
 
 #include <czmq.h>
+#include <czmq++/define.hpp>
 
 namespace czmqpp {
 
-class CZMQ_EXPORT context
+class CZMQPP_EXPORT context
 {
 public:
     context();

@@ -22,14 +22,15 @@
 
 #include <string>
 #include <czmq.h>
+#include <czmq++/define.hpp>
 #include <czmq++/socket.hpp>
 
 namespace czmqpp {
 
-CZMQ_EXPORT zcert_t* new_cert();
-CZMQ_EXPORT zcert_t* load_cert(const std::string& filename);
+CZMQPP_EXPORT zcert_t* new_cert();
+CZMQPP_EXPORT zcert_t* load_cert(const std::string& filename);
 
-class CZMQ_EXPORT certificate
+class CZMQPP_EXPORT certificate
 {
 public:
     certificate();
