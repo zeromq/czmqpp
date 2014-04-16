@@ -29,14 +29,13 @@ class CZMQPP_EXPORT context
 {
 public:
     context();
+    context(const context&) = delete;
     ~context();
 
     zctx_t* self();
 
 private:
-    context(const context&);
-
-    zctx_t* self_;
+    zctx_t* self_ = nullptr;
 };
 
 } // namespace czmqpp

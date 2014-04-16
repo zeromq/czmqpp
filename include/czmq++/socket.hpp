@@ -31,6 +31,7 @@ class CZMQPP_EXPORT socket
 public:
     socket(void* self);
     socket(socket&& other);
+    socket(const socket&) = delete;
     socket(context& ctx, int type);
 
     // context will delete the self_ for us.
@@ -46,9 +47,7 @@ public:
     int connect(const std::string& address);
 
 private:
-    socket(const socket&);
-
-    void* self_;
+    void* self_ = nullptr;
 };
 
 bool operator==(const socket& sock_a, const socket& sock_b);

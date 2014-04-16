@@ -23,11 +23,6 @@
 
 namespace czmqpp {
 
-poller::poller()
-:self_(nullptr)
-{
-}
-
 poller::~poller()
 {
     CZMQPP_ASSERT(self_);

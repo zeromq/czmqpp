@@ -29,6 +29,7 @@ socket::socket(void* self)
 }
 socket::socket(socket&& other)
 {
+    CZMQPP_ASSERT(self_ == nullptr);
     self_ = other.self_;
     other.self_ = nullptr;
 }

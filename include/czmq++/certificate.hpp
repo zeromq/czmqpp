@@ -36,6 +36,7 @@ public:
     certificate();
     certificate(zcert_t* self);
     certificate(certificate&& other);
+    certificate(const certificate&) = delete;
     ~certificate();
 
     void reset(zcert_t* self);
@@ -49,9 +50,7 @@ public:
     void apply(socket& sock);
 
 private:
-    certificate(const certificate&);
-
-    zcert_t* self_;
+    zcert_t* self_ = nullptr;
 };
 
 } // namespace czmqpp

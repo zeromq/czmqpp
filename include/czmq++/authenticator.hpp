@@ -30,6 +30,7 @@ class CZMQPP_EXPORT authenticator
 {
 public:
     authenticator(context& ctx);
+    authenticator(const authenticator&) = delete;
     ~authenticator();
 
     zauth_t* self();
@@ -42,9 +43,7 @@ public:
         const std::string& domain, const std::string& location);
     void set_verbose(bool verbose);
 private:
-    authenticator(const authenticator&);
-
-    zauth_t* self_;
+    zauth_t* self_ = nullptr;
 };
 
 } // namespace czmqpp

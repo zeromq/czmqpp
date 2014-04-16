@@ -28,9 +28,9 @@ namespace czmqpp {
 class CZMQPP_EXPORT poller
 {
 public:
-    poller();
-    template <typename SocketArgs>
-    poller(SocketArgs&& sockets);
+    template <typename... SocketArgs>
+    poller(SocketArgs&&... sockets);
+    poller(const poller&) = delete;
     ~poller();
 
     zpoller_t* self();
@@ -40,9 +40,7 @@ public:
     bool expired();
     bool terminated();
 private:
-    poller(const poller&);
-
-    zpoller_t* self_;
+    zpoller_t* self_ = nullptr;
 };
 
 } // namespace czmqpp
