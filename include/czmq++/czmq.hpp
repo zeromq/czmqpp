@@ -25,9 +25,10 @@
 #include <czmq++/authenticator.hpp>
 #include <czmq++/certificate.hpp>
 #include <czmq++/context.hpp>
-#include <czmq++/socket.hpp>
+#include <czmq++/define.hpp>
 #include <czmq++/message.hpp>
 #include <czmq++/poller.hpp>
+#include <czmq++/socket.hpp>
 #include <czmq++/thread.hpp>
 
 #endif

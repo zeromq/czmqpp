@@ -40,6 +40,7 @@
         <file src="..\\..\\include\\czmq++\\authenticator.hpp" target="build\\native\\include\\czmq++" />
         <file src="..\\..\\include\\czmq++\\certificate.hpp" target="build\\native\\include\\czmq++" />
         <file src="..\\..\\include\\czmq++\\context.hpp" target="build\\native\\include\\czmq++" />
+        <file src="..\\..\\include\\czmq++\\define.hpp" target="build\\native\\include\\czmq++" />
         <file src="..\\..\\include\\czmq++\\czmq.hpp" target="build\\native\\include\\czmq++" />
         <file src="..\\..\\include\\czmq++\\message.hpp" target="build\\native\\include\\czmq++" />
         <file src="..\\..\\include\\czmq++\\poller.hpp" target="build\\native\\include\\czmq++" />
@@ -108,7 +109,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$\($(package.target)-linkage-nuget)' == 'static' Or '$\($(package.target)-linkage-nuget)' == 'ltcg'">
     <ClCompile>
-      <PreprocessorDefinitions>LIBCZMQ_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>LIBCZMQPP_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
 

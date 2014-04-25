@@ -7,7 +7,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
     <metadata minClientVersion="2.5">
         <id>czmqpp_vc120</id>
-        <version>1.0.0.3</version>
+        <version>1.0.0.5</version>
         <title>czmqpp_vc120</title>
         <authors>Amir Taaki</authors>
         <owners>Eric Voskuil</owners>
@@ -15,7 +15,7 @@
         <projectUrl>https://github.com/zeromq/czmqpp</projectUrl>
         <iconUrl>https://avatars1.githubusercontent.com/u/109777?s=32</iconUrl>
         <requireLicenseAcceptance>true</requireLicenseAcceptance>
-        <developmentDependency>true</developmentDependency>
+        <developmentDependency>false</developmentDependency>
         <description>The 0MQ lightweight messaging kernel is a library which extends the standard socket interfaces with features traditionally provided by specialised messaging middleware products. 0MQ sockets provide an abstraction of asynchronous message queues, multiple messaging patterns, message filtering (subscriptions), seamless access to multiple transport protocols and more.</description>
         <summary>High-level C++ binding for 0MQ, packaged for Visual Studio 2013 (v120) and CTP_Nov2013 compilers.</summary>
         <releaseNotes>https://github.com/zeromq/czmqpp/blob/master/NEWS</releaseNotes>
@@ -32,6 +32,7 @@
         <file src="..\..\include\czmq++\authenticator.hpp" target="build\native\include\czmq++" />
         <file src="..\..\include\czmq++\certificate.hpp" target="build\native\include\czmq++" />
         <file src="..\..\include\czmq++\context.hpp" target="build\native\include\czmq++" />
+        <file src="..\..\include\czmq++\define.hpp" target="build\native\include\czmq++" />
         <file src="..\..\include\czmq++\czmq.hpp" target="build\native\include\czmq++" />
         <file src="..\..\include\czmq++\message.hpp" target="build\native\include\czmq++" />
         <file src="..\..\include\czmq++\poller.hpp" target="build\native\include\czmq++" />
@@ -53,20 +54,20 @@
         <!-- libraries -->
 
         <!-- x86 Static libraries (.lib) -->
-        <file src="..\..\bin\Win32\Release\czmqpp12\czmqpp.lib" target="build\native\bin\czmqpp-x86-v120-mt-s-1_0_0_3.lib" />
-        <file src="..\..\bin\Win32\Debug\czmqpp12\czmqpp.lib" target="build\native\bin\czmqpp-x86-v120-mt-sgd-1_0_0_3.lib" />
+        <file src="..\..\bin\Win32\Release\czmqpp12\czmqpp.lib" target="build\native\bin\czmqpp-x86-v120-mt-s-1_0_0_5.lib" />
+        <file src="..\..\bin\Win32\Debug\czmqpp12\czmqpp.lib" target="build\native\bin\czmqpp-x86-v120-mt-sgd-1_0_0_5.lib" />
 
         <!-- x86 Static link time code generation libraries (.ltcg.lib) -->
-        <file src="..\..\bin\Win32\Release\czmqpp12\czmqpp.ltcg.lib" target="build\native\bin\czmqpp-x86-v120-mt-s-1_0_0_3.ltcg.lib" />
-        <file src="..\..\bin\Win32\Debug\czmqpp12\czmqpp.ltcg.lib" target="build\native\bin\czmqpp-x86-v120-mt-sgd-1_0_0_3.ltcg.lib" />
+        <file src="..\..\bin\Win32\Release\czmqpp12\czmqpp.ltcg.lib" target="build\native\bin\czmqpp-x86-v120-mt-s-1_0_0_5.ltcg.lib" />
+        <file src="..\..\bin\Win32\Debug\czmqpp12\czmqpp.ltcg.lib" target="build\native\bin\czmqpp-x86-v120-mt-sgd-1_0_0_5.ltcg.lib" />
 
         <!-- x64 Static libraries (.lib) -->
-        <file src="..\..\bin\x64\Release\czmqpp12\czmqpp.lib" target="build\native\bin\czmqpp-x64-v120-mt-s-1_0_0_3.lib" />
-        <file src="..\..\bin\x64\Debug\czmqpp12\czmqpp.lib" target="build\native\bin\czmqpp-x64-v120-mt-sgd-1_0_0_3.lib" />
+        <file src="..\..\bin\x64\Release\czmqpp12\czmqpp.lib" target="build\native\bin\czmqpp-x64-v120-mt-s-1_0_0_5.lib" />
+        <file src="..\..\bin\x64\Debug\czmqpp12\czmqpp.lib" target="build\native\bin\czmqpp-x64-v120-mt-sgd-1_0_0_5.lib" />
 
         <!-- x64 Static link time code generation libraries (.ltcg.lib) -->
-        <file src="..\..\bin\Win32\Release\czmqpp12\czmqpp.ltcg.lib" target="build\native\bin\czmqpp-x64-v120-mt-s-1_0_0_3.ltcg.lib" />
-        <file src="..\..\bin\Win32\Debug\czmqpp12\czmqpp.ltcg.lib" target="build\native\bin\czmqpp-x64-v120-mt-sgd-1_0_0_3.ltcg.lib" />
+        <file src="..\..\bin\Win32\Release\czmqpp12\czmqpp.ltcg.lib" target="build\native\bin\czmqpp-x64-v120-mt-s-1_0_0_5.ltcg.lib" />
+        <file src="..\..\bin\Win32\Debug\czmqpp12\czmqpp.ltcg.lib" target="build\native\bin\czmqpp-x64-v120-mt-sgd-1_0_0_5.ltcg.lib" />
     </files>
 <!--
 #################################################################
