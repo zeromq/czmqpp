@@ -10,45 +10,18 @@
   <ItemGroup Label="BuildOptionsExtension">
     <PropertyPageSchema Include="$(MSBuildThisFileDirectory)czmqpp.import.xml" />
   </ItemGroup>
-
-  <!-- Configuration -->
+  
+  <!-- Linkage -->
 
   <ItemDefinitionGroup>
     <ClCompile>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\..\..\czmqpp\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions Condition="'$(Linkage-libsodium)' == 'static' Or '$(Linkage-libsodium)' == 'ltcg'">LIBCZMQPP_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
-  </ItemDefinitionGroup>
-
-  <ItemDefinitionGroup Condition="'$(Linkage-czmq)' == 'static' Or '$(Linkage-czmq)' == 'ltcg'">
-    <ClCompile>
-      <PreprocessorDefinitions>LIBCZMQPP_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-    </ClCompile>
-  </ItemDefinitionGroup>
-
-    <ItemDefinitionGroup Condition="'$(Linkage-czmq)' == 'dynamic'">
-    <Link Condition="$(Configuration.IndexOf('Debug')) != -1">
-      <AdditionalDependencies>$(ProjectDir)..\..\..\..\..\czmqpp\bin\$(PlatformName)\Debug\czmqpp12\czmqpp.imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
-    </Link>
-    <Link Condition="$(Configuration.IndexOf('Release')) != -1">
-      <AdditionalDependencies>$(ProjectDir)..\..\..\..\..\czmqpp\bin\$(PlatformName)\Release\czmqpp12\czmqpp.imp.lib;%(AdditionalDependencies)</AdditionalDependencies>
-    </Link>
-  </ItemDefinitionGroup>
-
-  <ItemDefinitionGroup Condition="'$(Linkage-czmqpp)' == 'static'">
-    <Link Condition="$(Configuration.IndexOf('Debug')) != -1">
-      <AdditionalDependencies>$(ProjectDir)..\..\..\..\..\czmqpp\bin\$(PlatformName)\Debug\czmqpp12\czmqpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
-    </Link>
-    <Link Condition="$(Configuration.IndexOf('Release')) != -1">
-      <AdditionalDependencies>$(ProjectDir)..\..\..\..\..\czmqpp\bin\$(PlatformName)\Release\czmqpp12\czmqpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
-    </Link>
-  </ItemDefinitionGroup>
-
-  <ItemDefinitionGroup Condition="'$(Linkage-czmqpp)' == 'ltcg'">
-    <Link Condition="$(Configuration.IndexOf('Debug')) != -1">
-      <AdditionalDependencies>$(ProjectDir)..\..\..\..\..\czmqpp\bin\$(PlatformName)\Debug\czmqpp12\czmqpp.ltcg.lib;%(AdditionalDependencies)</AdditionalDependencies>
-    </Link>
-    <Link Condition="$(Configuration.IndexOf('Release')) != -1">
-      <AdditionalDependencies>$(ProjectDir)..\..\..\..\..\czmqpp\bin\$(PlatformName)\Release\czmqpp12\czmqpp.ltcg.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    <Link>
+      <AdditionalDependencies>czmqpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories Condition="$(Configuration.IndexOf('Debug')) != -1">$(ProjectDir)..\..\..\..\..\czmqpp\bin\$(PlatformName)\Debug\$(PlatformToolset)\$(Linkage-czmqpp)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories Condition="$(Configuration.IndexOf('Release')) != -1">$(ProjectDir)..\..\..\..\..\czmqpp\bin\$(PlatformName)\Release\$(PlatformToolset)\$(Linkage-czmqpp)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
 
@@ -56,15 +29,15 @@
 
   <Target Name="Linkage-czmqpp-dynamic" AfterTargets="AfterBuild" Condition="'$(Linkage-czmqpp)' == 'dynamic'">
     <Copy Condition="$(Configuration.IndexOf('Debug')) != -1"
-          SourceFiles="$(ProjectDir)..\..\..\..\..\czmqpp\bin\$(PlatformName)\Debug\czmqpp12\czmqpp.dll"
+          SourceFiles="$(ProjectDir)..\..\..\..\..\czmqpp\bin\$(PlatformName)\Debug\$(PlatformToolset)\dynamic\czmqpp.dll"
           DestinationFiles="$(TargetDir)czmqpp.dll"
           SkipUnchangedFiles="true" />
     <Copy Condition="$(Configuration.IndexOf('Debug')) != -1"
-          SourceFiles="$(ProjectDir)..\..\..\..\..\czmqpp\bin\$(PlatformName)\Debug\czmqpp12\czmqpp.pdb"
+          SourceFiles="$(ProjectDir)..\..\..\..\..\czmqpp\bin\$(PlatformName)\Debug\$(PlatformToolset)\dynamic\czmqpp.pdb"
           DestinationFiles="$(TargetDir)czmqpp.pdb"
           SkipUnchangedFiles="true" />
     <Copy Condition="$(Configuration.IndexOf('Release')) != -1"
-          SourceFiles="$(ProjectDir)..\..\..\..\..\czmqpp\bin\$(PlatformName)\Release\czmqpp12\czmqpp.dll"
+          SourceFiles="$(ProjectDir)..\..\..\..\..\czmqpp\bin\$(PlatformName)\Release\$(PlatformToolset)\dynamic\czmqpp.dll"
           DestinationFiles="$(TargetDir)czmqpp.dll"
           SkipUnchangedFiles="true" />
   </Target>
