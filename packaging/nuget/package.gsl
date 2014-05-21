@@ -30,24 +30,16 @@
         <copyright>GNU AFFERO GPL</copyright>
         <tags>native, czmqpp, czmq++, czmq, libzmq, zmq, 0MQ, messaging, sockets, C++</tags>
         <dependencies>
-            <dependency id="czmq_vc120" version="2.2.0.7" />
+.for dependency
+            <dependency id="$(id)" version="$(version)" />
+.endfor
         </dependencies>
     </metadata>
     <files>
         <!-- include -->
         
-        <file src="..\\..\\include\\czmq++\\assert.hpp" target="build\\native\\include\\czmq++" />
-        <file src="..\\..\\include\\czmq++\\authenticator.hpp" target="build\\native\\include\\czmq++" />
-        <file src="..\\..\\include\\czmq++\\certificate.hpp" target="build\\native\\include\\czmq++" />
-        <file src="..\\..\\include\\czmq++\\context.hpp" target="build\\native\\include\\czmq++" />
-        <file src="..\\..\\include\\czmq++\\define.hpp" target="build\\native\\include\\czmq++" />
-        <file src="..\\..\\include\\czmq++\\czmq.hpp" target="build\\native\\include\\czmq++" />
-        <file src="..\\..\\include\\czmq++\\message.hpp" target="build\\native\\include\\czmq++" />
-        <file src="..\\..\\include\\czmq++\\poller.hpp" target="build\\native\\include\\czmq++" />
-        <file src="..\\..\\include\\czmq++\\socket.hpp" target="build\\native\\include\\czmq++" />
-        <file src="..\\..\\include\\czmq++\\socket_opt.hpp" target="build\\native\\include\\czmq++" />
-        <file src="..\\..\\include\\czmq++\\thread.hpp" target="build\\native\\include\\czmq++" />
-        <file src="..\\..\\include\\czmq++\\impl\\poller.ipp" target="build\\native\\include\\czmq++\\impl" />
+        <file src="..\\..\\include\\czmq++\\*.hpp" target="build\\native\\include\\czmq++" />
+        <file src="..\\..\\include\\czmq++\\impl\\*.ipp" target="build\\native\\include\\czmq++\\impl" />
 
         <!-- targets -->
       
@@ -62,20 +54,20 @@
         <!-- libraries -->
 
         <!-- x86 Static libraries (.lib) -->
-        <file src="..\\..\\bin\\Win32\\Release\\$(package.namespace)\\$(package.target).lib" target="build\\native\\bin\\$(package.target)-x86-$(package.platformtoolset)-mt-s-$(package.pathversion).lib" />
-        <file src="..\\..\\bin\\Win32\\Debug\\$(package.namespace)\\$(package.target).lib" target="build\\native\\bin\\$(package.target)-x86-$(package.platformtoolset)-mt-sgd-$(package.pathversion).lib" />
+        <file src="..\\..\\bin\\Win32\\Release\\$(package.platformtoolset)\\static\\$(package.target).lib" target="build\\native\\bin\\$(package.target)-x86-$(package.platformtoolset)-mt-s-$(package.pathversion).lib" />
+        <file src="..\\..\\bin\\Win32\\Debug\\$(package.platformtoolset)\\static\\$(package.target).lib" target="build\\native\\bin\\$(package.target)-x86-$(package.platformtoolset)-mt-sgd-$(package.pathversion).lib" />
 
         <!-- x86 Static link time code generation libraries (.ltcg.lib) -->
-        <file src="..\\..\\bin\\Win32\\Release\\$(package.namespace)\\$(package.target).ltcg.lib" target="build\\native\\bin\\$(package.target)-x86-$(package.platformtoolset)-mt-s-$(package.pathversion).ltcg.lib" />
-        <file src="..\\..\\bin\\Win32\\Debug\\$(package.namespace)\\$(package.target).ltcg.lib" target="build\\native\\bin\\$(package.target)-x86-$(package.platformtoolset)-mt-sgd-$(package.pathversion).ltcg.lib" />
+        <file src="..\\..\\bin\\Win32\\Release\\$(package.platformtoolset)\\ltcg\\$(package.target).lib" target="build\\native\\bin\\$(package.target)-x86-$(package.platformtoolset)-mt-s-$(package.pathversion).ltcg.lib" />
+        <file src="..\\..\\bin\\Win32\\Debug\\$(package.platformtoolset)\\ltcg\\$(package.target).lib" target="build\\native\\bin\\$(package.target)-x86-$(package.platformtoolset)-mt-sgd-$(package.pathversion).ltcg.lib" />
 
         <!-- x64 Static libraries (.lib) -->
-        <file src="..\\..\\bin\\x64\\Release\\$(package.namespace)\\$(package.target).lib" target="build\\native\\bin\\$(package.target)-x64-$(package.platformtoolset)-mt-s-$(package.pathversion).lib" />
-        <file src="..\\..\\bin\\x64\\Debug\\$(package.namespace)\\$(package.target).lib" target="build\\native\\bin\\$(package.target)-x64-$(package.platformtoolset)-mt-sgd-$(package.pathversion).lib" />
+        <file src="..\\..\\bin\\x64\\Release\\$(package.platformtoolset)\\static\\$(package.target).lib" target="build\\native\\bin\\$(package.target)-x64-$(package.platformtoolset)-mt-s-$(package.pathversion).lib" />
+        <file src="..\\..\\bin\\x64\\Debug\\$(package.platformtoolset)\\static\\$(package.target).lib" target="build\\native\\bin\\$(package.target)-x64-$(package.platformtoolset)-mt-sgd-$(package.pathversion).lib" />
 
         <!-- x64 Static link time code generation libraries (.ltcg.lib) -->
-        <file src="..\\..\\bin\\Win32\\Release\\$(package.namespace)\\$(package.target).ltcg.lib" target="build\\native\\bin\\$(package.target)-x64-$(package.platformtoolset)-mt-s-$(package.pathversion).ltcg.lib" />
-        <file src="..\\..\\bin\\Win32\\Debug\\$(package.namespace)\\$(package.target).ltcg.lib" target="build\\native\\bin\\$(package.target)-x64-$(package.platformtoolset)-mt-sgd-$(package.pathversion).ltcg.lib" />
+        <file src="..\\..\\bin\\Win32\\Release\\$(package.platformtoolset)\\ltcg\\$(package.target).lib" target="build\\native\\bin\\$(package.target)-x64-$(package.platformtoolset)-mt-s-$(package.pathversion).ltcg.lib" />
+        <file src="..\\..\\bin\\Win32\\Debug\\$(package.platformtoolset)\\ltcg\\$(package.target).lib" target="build\\native\\bin\\$(package.target)-x64-$(package.platformtoolset)-mt-sgd-$(package.pathversion).ltcg.lib" />
     </files>
 <!--
 #################################################################
@@ -91,7 +83,7 @@
 #   GENERATED SOURCE CODE, DO NOT EDIT EXCEPT EXPERIMENTALLY    #
 #################################################################
 -->
-<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
   <!-- user interface -->
   <ItemGroup>

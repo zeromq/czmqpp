@@ -28,18 +28,8 @@
     <files>
         <!-- include -->
         
-        <file src="..\..\include\czmq++\assert.hpp" target="build\native\include\czmq++" />
-        <file src="..\..\include\czmq++\authenticator.hpp" target="build\native\include\czmq++" />
-        <file src="..\..\include\czmq++\certificate.hpp" target="build\native\include\czmq++" />
-        <file src="..\..\include\czmq++\context.hpp" target="build\native\include\czmq++" />
-        <file src="..\..\include\czmq++\define.hpp" target="build\native\include\czmq++" />
-        <file src="..\..\include\czmq++\czmq.hpp" target="build\native\include\czmq++" />
-        <file src="..\..\include\czmq++\message.hpp" target="build\native\include\czmq++" />
-        <file src="..\..\include\czmq++\poller.hpp" target="build\native\include\czmq++" />
-        <file src="..\..\include\czmq++\socket.hpp" target="build\native\include\czmq++" />
-        <file src="..\..\include\czmq++\socket_opt.hpp" target="build\native\include\czmq++" />
-        <file src="..\..\include\czmq++\thread.hpp" target="build\native\include\czmq++" />
-        <file src="..\..\include\czmq++\impl\poller.ipp" target="build\native\include\czmq++\impl" />
+        <file src="..\..\include\czmq++\*.hpp" target="build\native\include\czmq++" />
+        <file src="..\..\include\czmq++\impl\*.ipp" target="build\native\include\czmq++\impl" />
 
         <!-- targets -->
       
@@ -54,20 +44,20 @@
         <!-- libraries -->
 
         <!-- x86 Static libraries (.lib) -->
-        <file src="..\..\bin\Win32\Release\czmqpp12\czmqpp.lib" target="build\native\bin\czmqpp-x86-v120-mt-s-1_0_0_5.lib" />
-        <file src="..\..\bin\Win32\Debug\czmqpp12\czmqpp.lib" target="build\native\bin\czmqpp-x86-v120-mt-sgd-1_0_0_5.lib" />
+        <file src="..\..\bin\Win32\Release\v120\static\czmqpp.lib" target="build\native\bin\czmqpp-x86-v120-mt-s-1_0_0_5.lib" />
+        <file src="..\..\bin\Win32\Debug\v120\static\czmqpp.lib" target="build\native\bin\czmqpp-x86-v120-mt-sgd-1_0_0_5.lib" />
 
         <!-- x86 Static link time code generation libraries (.ltcg.lib) -->
-        <file src="..\..\bin\Win32\Release\czmqpp12\czmqpp.ltcg.lib" target="build\native\bin\czmqpp-x86-v120-mt-s-1_0_0_5.ltcg.lib" />
-        <file src="..\..\bin\Win32\Debug\czmqpp12\czmqpp.ltcg.lib" target="build\native\bin\czmqpp-x86-v120-mt-sgd-1_0_0_5.ltcg.lib" />
+        <file src="..\..\bin\Win32\Release\v120\ltcg\czmqpp.lib" target="build\native\bin\czmqpp-x86-v120-mt-s-1_0_0_5.ltcg.lib" />
+        <file src="..\..\bin\Win32\Debug\v120\ltcg\czmqpp.lib" target="build\native\bin\czmqpp-x86-v120-mt-sgd-1_0_0_5.ltcg.lib" />
 
         <!-- x64 Static libraries (.lib) -->
-        <file src="..\..\bin\x64\Release\czmqpp12\czmqpp.lib" target="build\native\bin\czmqpp-x64-v120-mt-s-1_0_0_5.lib" />
-        <file src="..\..\bin\x64\Debug\czmqpp12\czmqpp.lib" target="build\native\bin\czmqpp-x64-v120-mt-sgd-1_0_0_5.lib" />
+        <file src="..\..\bin\x64\Release\v120\static\czmqpp.lib" target="build\native\bin\czmqpp-x64-v120-mt-s-1_0_0_5.lib" />
+        <file src="..\..\bin\x64\Debug\v120\static\czmqpp.lib" target="build\native\bin\czmqpp-x64-v120-mt-sgd-1_0_0_5.lib" />
 
         <!-- x64 Static link time code generation libraries (.ltcg.lib) -->
-        <file src="..\..\bin\Win32\Release\czmqpp12\czmqpp.ltcg.lib" target="build\native\bin\czmqpp-x64-v120-mt-s-1_0_0_5.ltcg.lib" />
-        <file src="..\..\bin\Win32\Debug\czmqpp12\czmqpp.ltcg.lib" target="build\native\bin\czmqpp-x64-v120-mt-sgd-1_0_0_5.ltcg.lib" />
+        <file src="..\..\bin\Win32\Release\v120\ltcg\czmqpp.lib" target="build\native\bin\czmqpp-x64-v120-mt-s-1_0_0_5.ltcg.lib" />
+        <file src="..\..\bin\Win32\Debug\v120\ltcg\czmqpp.lib" target="build\native\bin\czmqpp-x64-v120-mt-sgd-1_0_0_5.ltcg.lib" />
     </files>
 <!--
 #################################################################
