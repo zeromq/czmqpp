@@ -19,7 +19,7 @@
       <PreprocessorDefinitions Condition="'$(Linkage-libsodium)' == 'static' Or '$(Linkage-libsodium)' == 'ltcg'">LIBCZMQPP_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>czmqpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies Condition="'$(Linkage-czmqpp)' != ''">czmqpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories Condition="$(Configuration.IndexOf('Debug')) != -1">$(ProjectDir)..\..\..\..\..\czmqpp\bin\$(PlatformName)\Debug\$(PlatformToolset)\$(Linkage-czmqpp)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalLibraryDirectories Condition="$(Configuration.IndexOf('Release')) != -1">$(ProjectDir)..\..\..\..\..\czmqpp\bin\$(PlatformName)\Release\$(PlatformToolset)\$(Linkage-czmqpp)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
