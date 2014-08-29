@@ -43,7 +43,10 @@ public:
         const std::string& domain, const std::string& location);
     void set_verbose(bool verbose);
 private:
-    zauth_t* self_ = nullptr;
+    // Travis default gcc build:
+    // error: ‘constexpr’ needed for in-class initialization of static data 
+    // member ‘self_’ of non-integral type. initialize on construct.
+    zauth_t* self_;
 };
 
 } // namespace czmqpp
