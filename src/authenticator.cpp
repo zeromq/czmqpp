@@ -24,8 +24,8 @@
 namespace czmqpp {
 
 authenticator::authenticator(context& ctx)
+    : self_(zauth_new(ctx.self()))
 {
-    self_ = zauth_new(ctx.self());
 }
 authenticator::~authenticator()
 {

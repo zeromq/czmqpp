@@ -43,7 +43,7 @@ public:
         const std::string& domain, const std::string& location);
     void set_verbose(bool verbose);
 private:
-    zauth_t* self_ = nullptr;
+    zauth_t* self_;
 };
 
 } // namespace czmqpp

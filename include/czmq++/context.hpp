@@ -35,7 +35,7 @@ public:
     zctx_t* self();
 
 private:
-    zctx_t* self_ = nullptr;
+    zctx_t* self_;
 };
 
 } // namespace czmqpp

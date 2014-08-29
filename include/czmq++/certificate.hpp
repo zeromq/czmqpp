@@ -50,7 +50,7 @@ public:
     void apply(socket& sock);
 
 private:
-    zcert_t* self_ = nullptr;
+    zcert_t* self_;
 };
 
 } // namespace czmqpp

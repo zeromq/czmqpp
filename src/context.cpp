@@ -24,8 +24,8 @@
 namespace czmqpp {
 
 context::context()
+    : self_(zctx_new())
 {
-    self_ = zctx_new();
 }
 context::~context()
 {

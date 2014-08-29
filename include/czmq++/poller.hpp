@@ -40,7 +40,7 @@ public:
     bool expired();
     bool terminated();
 private:
-    zpoller_t* self_ = nullptr;
+    zpoller_t* self_;
 };
 
 } // namespace czmqpp
