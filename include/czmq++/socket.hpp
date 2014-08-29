@@ -29,6 +29,7 @@ namespace czmqpp {
 class CZMQPP_EXPORT socket
 {
 public:
+    socket::socket();
     socket(void* self);
     socket(socket&& other);
     socket(const socket&) = delete;
@@ -47,7 +48,7 @@ public:
     int connect(const std::string& address);
 
 private:
-    void* self_ = nullptr;
+    void* self_;
 };
 
 bool operator==(const socket& sock_a, const socket& sock_b);

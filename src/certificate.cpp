@@ -33,11 +33,12 @@ zcert_t* load_cert(const std::string& filename)
 }
 
 certificate::certificate()
+    : self_(nullptr)
 {
 }
 certificate::certificate(zcert_t* self)
+    : self_(self)
 {
-    self_ = self;
 }
 certificate::certificate(certificate&& other)
 {
