@@ -29,7 +29,7 @@ namespace czmqpp {
 class CZMQPP_EXPORT socket
 {
 public:
-    socket::socket();
+    socket();
     socket(void* self);
     socket(socket&& other);
     socket(const socket&) = delete;
