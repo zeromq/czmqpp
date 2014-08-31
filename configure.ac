@@ -1,4 +1,4 @@
-AC_INIT([libczmqpp], [0.4.0], [genjix@riseup.net])
+AC_INIT([libczmqpp], [0.4.1], [genjix@riseup.net])
 AC_USE_SYSTEM_EXTENSIONS
 AC_LANG(C++)
 AC_CONFIG_AUX_DIR([build-aux])
@@ -16,7 +16,7 @@ m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 PKG_PROG_PKG_CONFIG
 PKG_CHECK_MODULES([libczmq], [libczmq])
 
-AM_CXXFLAGS="-ggdb -g3 -Wall -Wno-missing-braces -pedantic -Wextra -fstack-protector-all -DDEBUG"
+AM_CXXFLAGS="-ggdb -g3 -Wall -Wno-missing-braces -Wno-format-security -pedantic -Wextra -fstack-protector-all -DDEBUG"
 AC_SUBST([AM_CXXFLAGS])
 
 AC_ARG_WITH([pkgconfigdir], AS_HELP_STRING([--with-pkgconfigdir=PATH],
