@@ -59,10 +59,12 @@ void* socket::self() const
 
 int socket::bind(const std::string& address)
 {
+    // format-security: format not a string literal and no format arguments.
     return zsocket_bind(self_, address.c_str());
 }
 int socket::connect(const std::string& address)
 {
+    // format-security: format not a string literal and no format arguments.
     return zsocket_connect(self_, address.c_str());
 }
 
