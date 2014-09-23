@@ -62,10 +62,10 @@
     <ClInclude Include="..\..\..\..\include\czmq++\thread.hpp">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\include\czmq++\czmq.hpp">
+    <ClInclude Include="..\..\..\..\include\czmq++\define.hpp">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\include\czmq++\define.hpp">
+    <ClInclude Include="..\..\..\..\include\czmq++\czmqpp.hpp">
       <Filter>include</Filter>
     </ClInclude>
   </ItemGroup>
