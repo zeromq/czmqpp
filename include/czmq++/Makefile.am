@@ -1,6 +1,6 @@
 czmq___includedir = $(includedir)/czmq++
 czmq___include_HEADERS = \
-    czmq.hpp \
+    czmqpp.hpp \
     assert.hpp \
     define.hpp \
     authenticator.hpp \

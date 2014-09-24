@@ -17,10 +17,8 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef LIBCZMQPP_CZMQ_HPP
-#define LIBCZMQPP_CZMQ_HPP
-
-// TODO: rename this file to czmqpp.hpp
+#ifndef LIBCZMQPP_CZMQPP_HPP
+#define LIBCZMQPP_CZMQPP_HPP
 
 #include <czmq++/authenticator.hpp>
 #include <czmq++/certificate.hpp>

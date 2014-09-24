@@ -99,7 +99,7 @@
       <AdditionalLibraryDirectories>$\(MSBuildThisFileDirectory)bin\\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$\($(package.target)-linkage-nuget)' == 'static' Or '$\($(package.target)-linkage-nuget)' == 'ltcg'">
+  <ItemDefinitionGroup Condition="'$\(Linkage-$(package.target))' == 'static' Or '$\(Linkage-$(package.target))' == 'ltcg'">
     <ClCompile>
       <PreprocessorDefinitions>LIBCZMQPP_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
