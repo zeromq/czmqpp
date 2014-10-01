@@ -16,7 +16,12 @@ m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 PKG_PROG_PKG_CONFIG
 PKG_CHECK_MODULES([libczmq], [libczmq])
 
-AM_CXXFLAGS="-ggdb -g3 -Wall -Wno-missing-braces -Wno-format-security -pedantic -Wextra -fstack-protector-all -DDEBUG"
+# Do not add contextual build parameters in configuration.
+# http://stackoverflow.com/a/4680578
+OPTIMIZATIONS="-fvisibility=internal"
+WARNINGS="-Wall -Wextra -Wno-format-security -Wno-missing-braces -Wpedantic"
+SAFEGUARDS="-fvisibility-inlines-hidden -fstack-protector-all"
+AM_CXXFLAGS=$WARNINGS" "$SAFEGUARDS" "$OPTIMIZATIONS
 AC_SUBST([AM_CXXFLAGS])
 
 AC_ARG_WITH([pkgconfigdir], AS_HELP_STRING([--with-pkgconfigdir=PATH],
