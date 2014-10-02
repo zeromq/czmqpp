@@ -25,7 +25,7 @@
 
 namespace czmqpp {
 
-class CZMQPP_EXPORT poller
+class CZMQPP_API poller
 {
 public:
     template <typename... SocketArgs>

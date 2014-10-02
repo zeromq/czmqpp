@@ -27,9 +27,9 @@
 
 namespace czmqpp {
 
-typedef CZMQPP_EXPORT std::function<void (czmqpp::socket&)> fork_callback;
+typedef std::function<void (czmqpp::socket&)> fork_callback;
 
-CZMQPP_EXPORT socket thread_fork(czmqpp::context& ctx, fork_callback callback);
+CZMQPP_API socket thread_fork(czmqpp::context& ctx, fork_callback callback);
 
 } // namespace czmqpp
 

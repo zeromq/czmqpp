@@ -24,16 +24,40 @@
 
 #define CZMQPP_ASSERT assert
 
-#if defined (_WIN32)
-#   if defined LIBCZMQPP_STATIC
-#       define CZMQPP_EXPORT
-#   elif defined LIBCZMQPP_EXPORTS
-#       define CZMQPP_EXPORT __declspec(dllexport)
-#   else
-#       define CZMQPP_EXPORT __declspec(dllimport)
-#   endif
+// See http://gcc.gnu.org/wiki/Visibility
+
+// Generic helper definitions for shared library support
+#if defined _MSC_VER || defined __CYGWIN__
+    #define CZMQPP_HELPER_DLL_IMPORT __declspec(dllimport)
+    #define CZMQPP_HELPER_DLL_EXPORT __declspec(dllexport)
+    #define CZMQPP_HELPER_DLL_LOCAL
 #else
-#   define CZMQPP_EXPORT
+    #if __GNUC__ >= 4
+        #define CZMQPP_HELPER_DLL_IMPORT __attribute__ ((visibility ("default")))
+        #define CZMQPP_HELPER_DLL_EXPORT __attribute__ ((visibility ("default")))
+        #define CZMQPP_HELPER_DLL_LOCAL  __attribute__ ((visibility ("internal")))
+    #else
+        #define CZMQPP_HELPER_DLL_IMPORT
+        #define CZMQPP_HELPER_DLL_EXPORT
+        #define CZMQPP_HELPER_DLL_LOCAL
+    #endif
+#endif
+
+// Now we use the generic helper definitions above to
+// define BC_API and BC_INTERNAL.
+// BC_API is used for the public API symbols. It either DLL imports or
+// DLL exports (or does nothing for static build)
+// BC_INTERNAL is used for non-api symbols.
+
+#if defined LIBCZMQPP_STATIC
+    #define CZMQPP_API
+    #define CZMQPP_INTERNAL
+#elif defined LIBCZMQPP_EXPORTS
+    #define CZMQPP_API      CZMQPP_HELPER_DLL_EXPORT
+    #define CZMQPP_INTERNAL CZMQPP_HELPER_DLL_LOCAL
+#else
+    #define CZMQPP_API      CZMQPP_HELPER_DLL_IMPORT
+    #define CZMQPP_INTERNAL CZMQPP_HELPER_DLL_LOCAL
 #endif
 
 #endif

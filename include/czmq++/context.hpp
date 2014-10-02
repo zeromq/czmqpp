@@ -25,7 +25,7 @@
 
 namespace czmqpp {
 
-class CZMQPP_EXPORT context
+class CZMQPP_API context
 {
 public:
     context();
