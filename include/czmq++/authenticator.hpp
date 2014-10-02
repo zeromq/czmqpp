@@ -26,7 +26,7 @@
 
 namespace czmqpp {
 
-class CZMQPP_EXPORT authenticator
+class CZMQPP_API authenticator
 {
 public:
     authenticator(context& ctx);

@@ -30,7 +30,7 @@ namespace czmqpp {
 typedef std::vector<uint8_t> data_chunk;
 typedef std::vector<data_chunk> data_stack;
 
-class message
+class CZMQPP_API message
 {
 public:
     void append(const data_chunk& part);

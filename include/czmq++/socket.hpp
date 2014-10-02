@@ -26,7 +26,7 @@
 
 namespace czmqpp {
 
-class CZMQPP_EXPORT socket
+class CZMQPP_API socket
 {
 public:
     socket();
