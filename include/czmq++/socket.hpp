@@ -51,7 +51,7 @@ private:
     void* self_;
 };
 
-bool operator==(const socket& sock_a, const socket& sock_b);
+CZMQPP_API bool operator==(const socket& sock_a, const socket& sock_b);
 
 } // namespace czmqpp
 
