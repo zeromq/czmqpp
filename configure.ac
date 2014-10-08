@@ -3,7 +3,7 @@ AC_USE_SYSTEM_EXTENSIONS
 AC_LANG(C++)
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([m4])
-AM_INIT_AUTOMAKE([-Wall -Werror])
+AM_INIT_AUTOMAKE([subdir-objects -Wall -Werror])
 AM_PROG_AR
 LT_INIT
 AC_PROG_CXX
@@ -29,6 +29,6 @@ AC_ARG_WITH([pkgconfigdir], AS_HELP_STRING([--with-pkgconfigdir=PATH],
     [pkgconfigdir="$withval"], [pkgconfigdir='${libdir}/pkgconfig'])
 AC_SUBST([pkgconfigdir])
 
-AC_CONFIG_FILES([Makefile include/czmq++/Makefile src/Makefile libczmq++.pc])
+AC_CONFIG_FILES([Makefile libczmq++.pc])
 AC_OUTPUT
 
