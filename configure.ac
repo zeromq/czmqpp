@@ -19,7 +19,7 @@ PKG_CHECK_MODULES([libczmq], [libczmq])
 # Do not add contextual build parameters in configuration.
 # http://stackoverflow.com/a/4680578
 OPTIMIZATIONS="-fvisibility=internal"
-WARNINGS="-Wall -Wextra -Wno-format-security -Wno-missing-braces -Wpedantic"
+WARNINGS="-Wall -Wextra -Wno-format-security -Wno-missing-braces -pedantic"
 SAFEGUARDS="-fvisibility-inlines-hidden -fstack-protector-all"
 AM_CXXFLAGS=$WARNINGS" "$SAFEGUARDS" "$OPTIMIZATIONS
 AC_SUBST([AM_CXXFLAGS])
