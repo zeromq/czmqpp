@@ -1,0 +1,33 @@
+language: cpp
+
+compiler: gcc
+
+before_install:
+  # Set package repository.
+  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+  
+  # Update the system.
+  - sudo apt-get -qq update
+  
+  # Get GCC 4.7 (for C++11 support)
+  - sudo apt-get -qq install g++-4.7
+  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.7 50
+
+script:
+
+# Perform regression test build against ZeroMQ master + libsodium
+- mkdir build_dependencies
+- pushd build_dependencies
+- echo "*** build libsodium"
+- git clone git://github.com/jedisct1/libsodium.git
+- ( cd libsodium; ./autogen.sh; ./configure; make check; sudo make install; sudo ldconfig )
+- echo "*** build libzmq"
+- git clone git://github.com/zeromq/libzmq.git
+- ( cd libzmq; ./autogen.sh; ./configure; make check; sudo make install; sudo ldconfig )
+- echo "*** build czmq"
+- git clone git://github.com/zeromq/czmq
+- ( cd czmq; ./autogen.sh; ./configure; make check; sudo make install; sudo ldconfig )
+- popd
+- echo "*** build czmqpp"
+- (./autogen.sh; ./configure; make check )
+- echo "*** czmqpp build success"
