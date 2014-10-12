@@ -26,7 +26,7 @@ void client_task(const std::string& server_public_text)
     puts("Ironhouse test OK");
 }
 
-void server_task(czmqpp::certificate server_cert)
+void server_task(czmqpp::certificate& server_cert)
 {
     czmqpp::context ctx;
     assert(ctx.self());
@@ -70,7 +70,7 @@ int main()
     //  Now start the two detached threads; each of these has their
     //  own ZeroMQ context.
     std::string server_public_text = server_cert.public_text();
-    std::thread server_thread(server_task, std::move(server_cert));
+    std::thread server_thread(server_task, std::ref(server_cert));
     std::thread client_thread(client_task, server_public_text);
     
     client_thread.join();
