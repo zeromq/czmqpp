@@ -21,6 +21,8 @@
 
 namespace czmqpp {
 
+#define UNUSED(parameter) (void)(parameter)
+
 template <typename... SocketArgs>
 poller::poller(SocketArgs&&... sockets)
 {
@@ -28,8 +30,13 @@ poller::poller(SocketArgs&&... sockets)
     {
         return s.self();
     };
+
     self_ = zpoller_new(unmask(sockets)..., NULL);
     CZMQPP_ASSERT(self_);
+
+    // unmask generates an unused parameter warning when called as:
+    // czmqpp::poller::poller(SocketArgs&& ...) [with SocketArgs = {}]
+    UNUSED(unmask);
 }
 
 } // namespace czmqpp
