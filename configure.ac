@@ -50,6 +50,10 @@ AX_CHECK_COMPILE_FLAG([-Wpedantic],
     [CXXFLAGS="$CXXFLAGS -Wpedantic"],
     AX_CHECK_COMPILE_FLAG([-pedantic],
         [CXXFLAGS="$CXXFLAGS -pedantic"]))
+        
+# socket.cpp accepts a non-literal format string with no args.
+AX_CHECK_COMPILE_FLAG([-Wno-format-security],
+    [CXXFLAGS="$CXXFLAGS -Wno-format-security"])
 
 # Set compiler flags.
 #------------------------------------------------------------------------------
