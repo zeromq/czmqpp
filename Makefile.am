@@ -32,9 +32,9 @@ czmq___impl_include_HEADERS = \
 #
 # library
 #
-lib_LTLIBRARIES = libczmq++.la
+lib_LTLIBRARIES = src/libczmq++.la
 
-libczmq___la_SOURCES = \
+src_libczmq___la_SOURCES = \
     src/authenticator.cpp \
     src/certificate.cpp \
     src/context.cpp \
@@ -46,30 +46,30 @@ libczmq___la_SOURCES = \
 #
 # examples
 #
-EXTRA_PROGRAMS=ironhouse2 poller_test thread_test
+EXTRA_PROGRAMS=examples/ironhouse2 examples/poller_test examples/thread_test
 
 # add custom target
 examples: ${EXTRA_PROGRAMS}
 
-ironhouse2_SOURCES=\
+examples_ironhouse2_SOURCES=\
     examples/ironhouse2.cpp
 
-ironhouse2_LDADD=\
-    libczmq++.la \
+examples_ironhouse2_LDADD=\
+    src/libczmq++.la \
     ${libczmq_LIBS}
 
-poller_test_SOURCES=\
+examples_poller_test_SOURCES=\
     examples/poller_test.cpp
 
-poller_test_LDADD=\
-    libczmq++.la \
+examples_poller_test_LDADD=\
+    src/libczmq++.la \
     ${libczmq_LIBS}
 
-thread_test_SOURCES=\
+examples_thread_test_SOURCES=\
     examples/thread_test.cpp
 
-thread_test_LDADD=\
-    libczmq++.la \
+examples_thread_test_LDADD=\
+    src/libczmq++.la \
     ${libczmq_LIBS}
 
 CLEANFILES=${EXTRA_PROGRAMS}
