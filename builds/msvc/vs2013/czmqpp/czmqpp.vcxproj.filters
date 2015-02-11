@@ -68,6 +68,7 @@
     <ClInclude Include="..\..\..\..\include\czmq++\czmqpp.hpp">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\resource.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\include\czmq++\impl\poller.ipp">
@@ -93,5 +94,8 @@
     <Xml Include="..\..\..\..\packaging\nuget\package.xml">
       <Filter>packaging</Filter>
     </Xml>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\resource.rc" />
   </ItemGroup>
 </Project>
