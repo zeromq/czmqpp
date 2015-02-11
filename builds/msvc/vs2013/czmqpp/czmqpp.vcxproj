@@ -94,9 +94,13 @@
     <ClInclude Include="..\..\..\..\include\czmq++\socket.hpp" />
     <ClInclude Include="..\..\..\..\include\czmq++\socket_opt.hpp" />
     <ClInclude Include="..\..\..\..\include\czmq++\thread.hpp" />
+    <ClInclude Include="..\..\resource.h" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="..\..\..\..\packaging\nuget\package.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\resource.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 </Project>
