@@ -7,7 +7,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
     <metadata minClientVersion="2.5">
         <id>czmqpp_vc120</id>
-        <version>1.0.0.11</version>
+        <version>1.1.0.0</version>
         <title>czmqpp_vc120</title>
         <authors>Amir Taaki</authors>
         <owners>Eric Voskuil</owners>
@@ -44,20 +44,20 @@
         <!-- libraries -->
 
         <!-- x86 Static libraries (.lib) -->
-        <file src="..\..\bin\Win32\Release\v120\static\czmqpp.lib" target="build\native\bin\czmqpp-x86-v120-mt-s-1_0_0_11.lib" />
-        <file src="..\..\bin\Win32\Debug\v120\static\czmqpp.lib" target="build\native\bin\czmqpp-x86-v120-mt-sgd-1_0_0_11.lib" />
+        <file src="..\..\bin\Win32\Release\v120\static\czmqpp.lib" target="build\native\bin\czmqpp-x86-v120-mt-s-1_1_0_0.lib" />
+        <file src="..\..\bin\Win32\Debug\v120\static\czmqpp.lib" target="build\native\bin\czmqpp-x86-v120-mt-sgd-1_1_0_0.lib" />
 
         <!-- x86 Static link time code generation libraries (.ltcg.lib) -->
-        <file src="..\..\bin\Win32\Release\v120\ltcg\czmqpp.lib" target="build\native\bin\czmqpp-x86-v120-mt-s-1_0_0_11.ltcg.lib" />
-        <file src="..\..\bin\Win32\Debug\v120\ltcg\czmqpp.lib" target="build\native\bin\czmqpp-x86-v120-mt-sgd-1_0_0_11.ltcg.lib" />
+        <file src="..\..\bin\Win32\Release\v120\ltcg\czmqpp.lib" target="build\native\bin\czmqpp-x86-v120-mt-s-1_1_0_0.ltcg.lib" />
+        <file src="..\..\bin\Win32\Debug\v120\ltcg\czmqpp.lib" target="build\native\bin\czmqpp-x86-v120-mt-sgd-1_1_0_0.ltcg.lib" />
 
         <!-- x64 Static libraries (.lib) -->
-        <file src="..\..\bin\x64\Release\v120\static\czmqpp.lib" target="build\native\bin\czmqpp-x64-v120-mt-s-1_0_0_11.lib" />
-        <file src="..\..\bin\x64\Debug\v120\static\czmqpp.lib" target="build\native\bin\czmqpp-x64-v120-mt-sgd-1_0_0_11.lib" />
+        <file src="..\..\bin\x64\Release\v120\static\czmqpp.lib" target="build\native\bin\czmqpp-x64-v120-mt-s-1_1_0_0.lib" />
+        <file src="..\..\bin\x64\Debug\v120\static\czmqpp.lib" target="build\native\bin\czmqpp-x64-v120-mt-sgd-1_1_0_0.lib" />
 
         <!-- x64 Static link time code generation libraries (.ltcg.lib) -->
-        <file src="..\..\bin\Win32\Release\v120\ltcg\czmqpp.lib" target="build\native\bin\czmqpp-x64-v120-mt-s-1_0_0_11.ltcg.lib" />
-        <file src="..\..\bin\Win32\Debug\v120\ltcg\czmqpp.lib" target="build\native\bin\czmqpp-x64-v120-mt-sgd-1_0_0_11.ltcg.lib" />
+        <file src="..\..\bin\Win32\Release\v120\ltcg\czmqpp.lib" target="build\native\bin\czmqpp-x64-v120-mt-s-1_1_0_0.ltcg.lib" />
+        <file src="..\..\bin\Win32\Debug\v120\ltcg\czmqpp.lib" target="build\native\bin\czmqpp-x64-v120-mt-sgd-1_1_0_0.ltcg.lib" />
     </files>
 <!--
 #################################################################
