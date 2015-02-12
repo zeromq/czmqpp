@@ -23,28 +23,27 @@
 
 namespace czmqpp {
 
-zcert_t* new_cert()
-{
-    return zcert_new();
-}
-zcert_t* load_cert(const std::string& filename)
-{
-    return zcert_load(filename.c_str());
-}
-
 certificate::certificate()
-    : self_(nullptr)
+    : self_(new_cert())
 {
+    // May be invalid (unlikely).
 }
 certificate::certificate(zcert_t* self)
     : self_(self)
 {
+    // May be invalid.
 }
 certificate::certificate(certificate&& other)
+    : self_(other.self_)
 {
-    CZMQPP_ASSERT(self_ == nullptr);
-    self_ = other.self_;
+    // May be invalid.
+    // Transfer of pointer ownership.
     other.self_ = nullptr;
+}
+certificate::certificate(const std::string& filename)
+    : self_(zcert_load(filename.c_str()))
+{
+    // May be invalid.
 }
 certificate::~certificate()
 {
@@ -53,13 +52,19 @@ certificate::~certificate()
 
 void certificate::reset(zcert_t* self)
 {
-    if (self_)
+    if (valid())
         zcert_destroy(&self_);
+
+    // May be invalid.
     self_ = self;
 }
 zcert_t* certificate::self()
 {
     return self_;
+}
+bool certificate::valid() const
+{
+    return self_ != nullptr;
 }
 
 void certificate::set_meta(const std::string& name, const std::string& value)
@@ -86,6 +91,23 @@ void certificate::apply(socket& sock)
 {
     zcert_apply(self_, sock.self());
 }
+
+///////////////////////////////////////////////////////////////////////////////
+// DEPRECATED: abstraction leak, use of constructor is recommended.
+///////////////////////////////////////////////////////////////////////////////
+zcert_t* new_cert()
+{
+    return zcert_new();
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// DEPRECATED: abstraction leak, use of constructor is recommended.
+///////////////////////////////////////////////////////////////////////////////
+zcert_t* load_cert(const std::string& filename)
+{
+    return zcert_load(filename.c_str());
+}
+
 
 } // namespace czmqpp
 

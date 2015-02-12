@@ -114,7 +114,7 @@ std::string tcp_accept_filter() {
 int rcvmore() {
     return zsocket_rcvmore(self_);
 }
-int fd() {
+SOCKET fd() {
     return zsocket_fd(self_);
 }
 int events() {

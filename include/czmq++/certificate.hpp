@@ -27,20 +27,19 @@
 
 namespace czmqpp {
 
-CZMQPP_API zcert_t* new_cert();
-CZMQPP_API zcert_t* load_cert(const std::string& filename);
-
 class CZMQPP_API certificate
 {
 public:
     certificate();
     certificate(zcert_t* self);
     certificate(certificate&& other);
+    certificate(const std::string& filename);
     certificate(const certificate&) = delete;
     ~certificate();
 
     void reset(zcert_t* self);
     zcert_t* self();
+    bool valid() const;
 
     void set_meta(const std::string& name, const std::string& value);
     int save(const std::string& filename);
@@ -52,6 +51,12 @@ public:
 private:
     zcert_t* self_;
 };
+
+///////////////////////////////////////////////////////////////////////////////
+// DEPRECATED: abstraction leak, use of constructor is recommended.
+///////////////////////////////////////////////////////////////////////////////
+CZMQPP_API zcert_t* new_cert();
+CZMQPP_API zcert_t* load_cert(const std::string& filename);
 
 } // namespace czmqpp
 

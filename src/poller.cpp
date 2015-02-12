@@ -40,7 +40,7 @@ void poller::add(socket& sock)
 }
 socket poller::wait(int timeout)
 {
-    void* sock_ptr = zpoller_wait(self_, timeout);
+    auto sock_ptr = zpoller_wait(self_, timeout);
     return socket(sock_ptr);
 }
 bool poller::expired()
