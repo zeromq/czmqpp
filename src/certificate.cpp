@@ -24,7 +24,7 @@
 namespace czmqpp {
 
 certificate::certificate()
-    : self_(new_cert())
+    : self_(zcert_new())
 {
     // May be invalid (unlikely).
 }
