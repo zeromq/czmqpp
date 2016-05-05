@@ -1,5 +1,5 @@
 AC_PREREQ([2.65])
-AC_INIT([libczmqpp], [1.1.0], [genjix@riseup.net])
+AC_INIT([libczmqpp], [1.2.0], [genjix@riseup.net])
 AC_LANG(C++)
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([m4])
