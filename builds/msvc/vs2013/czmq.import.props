@@ -19,7 +19,8 @@
       <PreprocessorDefinitions Condition="'$(Linkage-czmq)' == 'static' Or '$(Linkage-czmq)' == 'ltcg'">LIBCZMQ_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies Condition="'$(Linkage-czmq)' != ''">czmq.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <!-- rpcrt4.lib is required for UuidCreate -->
+      <AdditionalDependencies Condition="'$(Linkage-czmq)' != ''">rpcrt4.lib;czmq.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories Condition="$(Configuration.IndexOf('Debug')) != -1">$(ProjectDir)..\..\..\..\..\czmq\bin\$(PlatformName)\Debug\$(PlatformToolset)\$(Linkage-czmq)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalLibraryDirectories Condition="$(Configuration.IndexOf('Release')) != -1">$(ProjectDir)..\..\..\..\..\czmq\bin\$(PlatformName)\Release\$(PlatformToolset)\$(Linkage-czmq)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
