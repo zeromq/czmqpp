@@ -38,6 +38,7 @@ public:
     ~certificate();
 
     void reset(zcert_t* self);
+    void reset(const std::string& filename);
     zcert_t* self();
     bool valid() const;
 

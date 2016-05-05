@@ -58,6 +58,14 @@ void certificate::reset(zcert_t* self)
     // May be invalid.
     self_ = self;
 }
+void certificate::reset(const std::string& filename)
+{
+    if (valid())
+        zcert_destroy(&self_);
+
+    // May be invalid.
+    self_ = zcert_load(filename.c_str());
+}
 zcert_t* certificate::self()
 {
     return self_;
